@@ -162,7 +162,7 @@ public class FriendsLobbyGameManager : MonoBehaviour {
 	}
 	public void OnButtonCharacterShow(){
 		if(UIMode == (int)GUIMode.Normal){
-			Lobby.SetActive (false);
+			//Lobby.SetActive (false);
 			Player_Background.SetActive (true);
 			UIMode = (int)GUIMode.CharacterSelection;
 		}
@@ -171,8 +171,10 @@ public class FriendsLobbyGameManager : MonoBehaviour {
 	public void OnButtonCharacterShowNo(){
 		if(UIMode == (int)GUIMode.CharacterSelection){
 			Player_Background.SetActive (false);
-			Lobby.SetActive (true);
-			UIMode = (int)GUIMode.Normal;
+            //Lobby.SetActive (true);
+            UIMgr.Instance.HideCharacterView(eCharacterViewObjectType.CharacterView_2);
+            UIMgr.Instance.ShowCharacterView(eCharacterViewObjectType.CharacterView_1);
+            UIMode = (int)GUIMode.Normal;
 		}
 		//DialogMgr.ShowPurchaseDialog(OnCharacterBuyOk, OnCharacterCancel);
 	}
@@ -183,8 +185,10 @@ public class FriendsLobbyGameManager : MonoBehaviour {
 		print ("Buy Item Cancel");
 	}
 
-	
-	void LoadCharacter(){
+
+    [SerializeField]
+    GameObject GunnerPrefab;
+    void LoadCharacter(){
 		TextAsset ta = Resources.Load("PlayerSelect", typeof(TextAsset)) as TextAsset;
 		string s = ta.text;
 		string[] lines = s.Split('\n');
@@ -210,16 +214,38 @@ public class FriendsLobbyGameManager : MonoBehaviour {
 			return x.C_Name.CompareTo(y.C_Name);
 		});
 		int indexer = 0;
-		
-		foreach(M_GunnerCharacterInfo Gunner in Gunners)
+
+        // MinGoo, 2016년 3월 30일 추가된 코드
+        UIMgr.Instance.HideCharacterView(eCharacterViewObjectType.CharacterView_1);
+        UIMgr.Instance.ShowCharacterView(eCharacterViewObjectType.CharacterView_2);
+        GameObject CharacterView_2 = UIMgr.Instance.ShowCharacterViewGameObject(eCharacterViewObjectType.CharacterView_2);
+        GameObject parent = CharacterView_2.transform.FindChild("Background").gameObject;
+        //CharacterView_2
+        foreach (M_GunnerCharacterInfo Gunner in Gunners)
 		{
 			GameObject charteritem = NGUITools.AddChild(SelectGrid.gameObject, CharacterPrefab);
+
+
+
 			UILabel Name = charteritem.transform.FindChild("Name").GetComponent<UILabel>();
-			Name.text = Gunner.C_Name.ToString();
+            //Name.text = Gunner.C_Name.ToString();
+            //NGUITools.AdjustDepth (charteritem.transform.FindChild("Gunner").gameObject, 1);
 
-			NGUITools.AdjustDepth (charteritem.transform.FindChild("Gunner").gameObject, 1);
+            // MinGoo, 2016년 3월 30일 추가된 코드
+            GameObject go = GameObject.Instantiate(GunnerPrefab) as GameObject;
+            if (go != null && parent != null)
+            {
+                Transform t = go.transform;
+                t.parent = parent.transform;
+                t.localPosition = new Vector3(3.5f - indexer * 1.5f, 0, 0);
+                t.localRotation = Quaternion.identity;
+                t.localScale = Vector3.one;
+                go.layer = parent.layer;
+                go.name = Gunner.C_Name.ToString();
+            }
+            
 
-			Renderer mat = charteritem.transform.FindChild("Gunner").FindChild("HeroBase_01").FindChild("HeroBase_mesh").GetComponent<Renderer>();
+            Renderer mat =  go.transform.FindChild("HeroBase_01").FindChild("HeroBase_mesh").GetComponent<Renderer>();
 			mat.material = FindMaterial(Gunner.C_NamePrefab);
 			
 			UILabel Level = charteritem.transform.FindChild("CharaterLevel/Label").GetComponent<UILabel>();

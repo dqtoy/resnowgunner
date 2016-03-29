@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/ScenesTwo/FriendsWindow2Stage.unity
+    path: Assets/01. Scenes/FriendsLobby.unity
   - enabled: 1
-    path: Assets/ScenesTwo/Progress Map.unity
+    path: Assets/01. Scenes/MapLoading.unity
   - enabled: 1
-    path: Assets/SceneOne/Stage2.unity
+    path: Assets/01. Scenes/StageScene.unity
