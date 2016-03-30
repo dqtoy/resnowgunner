@@ -18,7 +18,7 @@ public enum eCharacterViewObjectType
 public class UIMgr : BaseMgr<UIMgr> {
     Dictionary<eUIType, GameObject> m_dicUI = new Dictionary<eUIType, GameObject>();
     Dictionary<eCharacterViewObjectType, GameObject> m_dicCharacterViewObject = new Dictionary<eCharacterViewObjectType, GameObject>();
-
+    
     public void ShowLoadingUI(float fValue)
     {
         GameObject loadingui = _GetUI(eUIType.PF_UI_LOADING);
@@ -27,8 +27,8 @@ public class UIMgr : BaseMgr<UIMgr> {
             loadingui.SetActive(true);
         }
 
-        //UI_Loading_EventHandler eventHandler = loadingui.GetComponentInChildren<UI_Loading_EventHandler>();
-        //eventHandler.SetValue(fValue);
+        UI_Loading_EventHandler eventHandler = loadingui.GetComponentInChildren<UI_Loading_EventHandler>();
+        eventHandler.SetValue(fValue);
     }
 
     public void HideLoadingUI()
@@ -103,8 +103,8 @@ public class UIMgr : BaseMgr<UIMgr> {
             CharacterViewObject.SetActive(true);
         }
 
-        //UI_Loading_EventHandler eventHandler = loadingui.GetComponentInChildren<UI_Loading_EventHandler>();
-        //eventHandler.SetValue(fValue);
+//      UI_Loading_EventHandler eventHandler = loadingui.GetComponentInChildren<UI_Loading_EventHandler>();
+//      eventHandler.SetValue(fValue);
 
     }
     public void HideCharacterView(eCharacterViewObjectType _CharacterViewObjectType)
@@ -123,7 +123,7 @@ public class UIMgr : BaseMgr<UIMgr> {
         }
 
         return CharacterViewObject;
-        //UI_Loading_EventHandler eventHandler = loadingui.GetComponentInChildren<UI_Loading_EventHandler>();
+        //eventHandler = loadingui.GetComponentInChildren<UI_Loading_EventHandler>();
         //eventHandler.SetValue(fValue);
 
     }

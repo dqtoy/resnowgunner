@@ -18,7 +18,7 @@ public class UserInfo{
 	public int Score;
 	public string Image;
 	public string RatingClass;
-	
+	public string switch_onoff;
 }
 public enum GUIMode : int {Normal = 0, SetMode = 1, CharacterSelection = 2};
 	
@@ -162,9 +162,12 @@ public class FriendsLobbyGameManager : MonoBehaviour {
 	}
 	public void OnButtonCharacterShow(){
 		if(UIMode == (int)GUIMode.Normal){
-			//Lobby.SetActive (false);
-			Player_Background.SetActive (true);
-			UIMode = (int)GUIMode.CharacterSelection;
+            //Lobby.SetActive (false);
+            Player_Background.SetActive (true);
+            // MinGoo, 2016년 3월 30일 추가된 코드
+            UIMgr.Instance.HideCharacterView(eCharacterViewObjectType.CharacterView_1);
+            UIMgr.Instance.ShowCharacterView(eCharacterViewObjectType.CharacterView_2);
+            UIMode = (int)GUIMode.CharacterSelection;
 		}
 		//DialogMgr.ShowPurchaseDialog(OnCharacterBuyOk, OnCharacterCancel);
 	}
@@ -237,9 +240,10 @@ public class FriendsLobbyGameManager : MonoBehaviour {
             {
                 Transform t = go.transform;
                 t.parent = parent.transform;
-                t.localPosition = new Vector3(3.5f - indexer * 1.5f, 0, 0);
+                t.localPosition = new Vector3(3.25f - indexer * 3f, 0, 0);
                 t.localRotation = Quaternion.identity;
                 t.localScale = Vector3.one;
+                t.localScale = new Vector3(0.75f, 0.75f, 0.75f);
                 go.layer = parent.layer;
                 go.name = Gunner.C_Name.ToString();
             }
@@ -271,7 +275,8 @@ public class FriendsLobbyGameManager : MonoBehaviour {
 			indexer++;
 		}
 		SelectGrid.Reposition();
-	}
+        UIMgr.Instance.ShowCharacterView(eCharacterViewObjectType.CharacterView_1);
+    }
 	Material FindMaterial(string matName) {
 		Material mat=null;
 		if(matName.Equals("Henry"))
@@ -379,6 +384,7 @@ public class FriendsLobbyGameManager : MonoBehaviour {
 			user.Score = Convert.ToInt32(words[6]);
 			user.Image = words[3];
 			user.RatingClass = words[4];
+            user.switch_onoff = words[7];
 			users.Add(user);
 		}
 		users.Sort (delegate(UserInfo x, UserInfo y) {
@@ -404,13 +410,14 @@ public class FriendsLobbyGameManager : MonoBehaviour {
 			Name.text = user.Name;
 			UILabel Score = item.transform.FindChild ("Score").GetComponent<UILabel>();
 			Score.text = user.Score.ToString();
-           
-			//UISprite OnOff = item.transform.FindChild("OnOff").GetComponent<UISprite>();
-			//OnOff.spriteName = "035_btn_swich_bar";
-			
-			//UISprite group = item.transform.FindChild("Icon").GetComponent<UISprite>();
-			//group.spriteName = GetSpriteAnyPangGroup(user.group.ToString ());
-			itemList.Add(item);
+            UISprite OnOff = item.transform.FindChild("OnOff").GetComponent<UISprite>();
+            OnOff.spriteName = user.switch_onoff;
+            //UISprite OnOff = item.transform.FindChild("OnOff").GetComponent<UISprite>();
+            //OnOff.spriteName = "035_btn_swich_bar";
+
+            //UISprite group = item.transform.FindChild("Icon").GetComponent<UISprite>();
+            //group.spriteName = GetSpriteAnyPangGroup(user.group.ToString ());
+            itemList.Add(item);
 
 			print ("itemList : "+itemList);
 

@@ -214,7 +214,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -81, y: 0, z: 0}
+  m_LocalPosition: {x: -82, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400016}
@@ -251,7 +251,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.00001526, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400014}
@@ -321,8 +321,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 11400000, guid: bbd8d551af6b04a1ca41730f1adafc1a, type: 2}
-  mSpriteName: 035_btn_swich_bar
+  mAtlas: {fileID: 11465936, guid: 65cce0429bf23584d8601b18f6f5bfca, type: 2}
+  mSpriteName: switch_on
   mFillCenter: 1
 --- !u!114 &11400002
 MonoBehaviour:
@@ -363,7 +363,7 @@ MonoBehaviour:
   aspectRatio: 6.4000001
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11455466, guid: 107b26c8969175f4dafc910bd6c465d8, type: 2}
+  mFont: {fileID: 11412622, guid: c15b012665f0c944bac9ab23e9c08f96, type: 2}
   mText: 49,146,388
   mFontSize: 30
   mFontStyle: 0
@@ -384,6 +384,7 @@ MonoBehaviour:
   mUseFloatSpacing: 0
   mFloatSpacingX: 0
   mFloatSpacingY: 0
+  mOverflowEllipsis: 0
   mShrinkToFit: 0
   mMaxLineWidth: 0
   mMaxLineHeight: 0
@@ -428,7 +429,7 @@ MonoBehaviour:
   aspectRatio: 6.86956501
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11455466, guid: 107b26c8969175f4dafc910bd6c465d8, type: 2}
+  mFont: {fileID: 11412622, guid: c15b012665f0c944bac9ab23e9c08f96, type: 2}
   mText: "\uC774 \uBBFC \uAD6C"
   mFontSize: 30
   mFontStyle: 0
@@ -449,6 +450,7 @@ MonoBehaviour:
   mUseFloatSpacing: 0
   mFloatSpacingX: 0
   mFloatSpacingY: 0
+  mOverflowEllipsis: 0
   mShrinkToFit: 0
   mMaxLineWidth: 0
   mMaxLineHeight: 0
@@ -501,8 +503,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 11400000, guid: f5b7413f25a544e9b946b1947f2d25d5, type: 2}
-  mSpriteName: item_03
+  mAtlas: {fileID: 11465936, guid: 65cce0429bf23584d8601b18f6f5bfca, type: 2}
+  mSpriteName: question_mark_blue_60x63
   mFillCenter: 1
 --- !u!114 &11400008
 MonoBehaviour:
@@ -543,7 +545,7 @@ MonoBehaviour:
   aspectRatio: .888888896
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11455466, guid: 107b26c8969175f4dafc910bd6c465d8, type: 2}
+  mFont: {fileID: 11412622, guid: c15b012665f0c944bac9ab23e9c08f96, type: 2}
   mText: 1
   mFontSize: 17
   mFontStyle: 0
@@ -564,6 +566,7 @@ MonoBehaviour:
   mUseFloatSpacing: 0
   mFloatSpacingX: 0
   mFloatSpacingY: 0
+  mOverflowEllipsis: 0
   mShrinkToFit: 0
   mMaxLineWidth: 0
   mMaxLineHeight: 0
@@ -616,7 +619,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 11400000, guid: bbd8d551af6b04a1ca41730f1adafc1a, type: 2}
+  mAtlas: {fileID: 11465936, guid: 65cce0429bf23584d8601b18f6f5bfca, type: 2}
   mSpriteName: 026_star
   mFillCenter: 1
 --- !u!114 &11400012
@@ -666,7 +669,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 11400000, guid: bbd8d551af6b04a1ca41730f1adafc1a, type: 2}
+  mAtlas: {fileID: 11465936, guid: 65cce0429bf23584d8601b18f6f5bfca, type: 2}
   mSpriteName: 002_heart_p
   mFillCenter: 1
 --- !u!114 &11400014
@@ -708,7 +711,7 @@ MonoBehaviour:
   aspectRatio: .769230783
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11455466, guid: 107b26c8969175f4dafc910bd6c465d8, type: 2}
+  mFont: {fileID: 11412622, guid: c15b012665f0c944bac9ab23e9c08f96, type: 2}
   mText: 1
   mFontSize: 52
   mFontStyle: 0
@@ -729,6 +732,7 @@ MonoBehaviour:
   mUseFloatSpacing: 0
   mFloatSpacingX: 0
   mFloatSpacingY: 0
+  mOverflowEllipsis: 0
   mShrinkToFit: 0
   mMaxLineWidth: 0
   mMaxLineHeight: 0
@@ -794,8 +798,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 11400000, guid: bbd8d551af6b04a1ca41730f1adafc1a, type: 2}
-  mSpriteName: 006_gage_blue
+  mAtlas: {fileID: 11465936, guid: 65cce0429bf23584d8601b18f6f5bfca, type: 2}
+  mSpriteName: bg_setting
   mFillCenter: 1
 --- !u!1001 &100100000
 Prefab:

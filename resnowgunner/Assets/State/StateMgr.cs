@@ -29,13 +29,14 @@ public class StateMgr : BaseMgr<StateMgr>
     AsyncOperation m_Operation = null;
 
     float m_fElapsedTime = 0.0f;
-
+    float m_fIntervalTime = 0.0f;
     void Awake()
     {
-        TextAsset sceneText = Resources.Load<TextAsset>("SCENE_INFO");
+        // JSON 형식 파일 읽어오기.
+        TextAsset sceneText = Resources.Load<TextAsset>("SCENE_INFO"); // JSON TEXT 파일을 읽고,
         if (sceneText != null)
         {
-            JSONClass nodeData = JSON.Parse(sceneText.text) as JSONClass;
+            JSONClass nodeData = JSON.Parse(sceneText.text) as JSONClass; // Dictionary가 넘어온다. 
             if (nodeData != null)
             {
                 JSONClass sceneInfoNode = nodeData["SCENE_INFO"] as JSONClass;
@@ -43,6 +44,7 @@ public class StateMgr : BaseMgr<StateMgr>
                 for (int i = (int)eStateType.STATE_TYPE_LOGO; i < (int)eStateType.STATE_TYPE_COUNT; ++i)
                 {
                     JSONClass sceneClass = sceneInfoNode[((eStateType)i).ToString("F")] as JSONClass;
+                    //JSONClass sceneClass = nodeData[((eStateType)i).ToString("F")] as JSONClass;
                     if (sceneClass != null)
                     {
                         stSceneInfo sceneInfo = new stSceneInfo();
@@ -84,11 +86,11 @@ public class StateMgr : BaseMgr<StateMgr>
 
 
 
-        for (int i = (int)eStateType.STATE_TYPE_LOGO; i < (int)eStateType.STATE_TYPE_COUNT; ++i)
+        for (int i = (int)eStateType.STATE_TYPE_LOGO; i < (int)eStateType.STATE_TYPE_COUNT; ++i) // 초기화
         {
             eStateType stateType = (eStateType)i;
             BaseState makeState = _CreateState(stateType);
-            m_dicState.Add(stateType, makeState);
+            m_dicState.Add(stateType, makeState); // 씬 1,2,3 사용 가능
         }
 
         StartState(eStateType.STATE_TYPE_LOGO);
@@ -105,11 +107,16 @@ public class StateMgr : BaseMgr<StateMgr>
 
     void Update()
     {
-        if (m_Operation != null)
+        if (m_Operation != null) // 씬전환중 ?
         {
+            m_fIntervalTime = m_fElapsedTime;
             m_fElapsedTime += Time.smoothDeltaTime;
-            if (m_fElapsedTime > 2.0f)
-                m_fElapsedTime = 2.0f;
+
+            if (m_fElapsedTime - m_fIntervalTime <= 0.01f)
+                m_fElapsedTime += 0.01f;
+
+            if (m_fElapsedTime > 2.0f) m_fElapsedTime = 2.0f;
+
 
             UIMgr.Instance.ShowLoadingUI(m_fElapsedTime / 2.0f);
             //UIMgr.Instance.ShowLoadingUI(m_Operation.progress);
@@ -147,9 +154,10 @@ public class StateMgr : BaseMgr<StateMgr>
 
             if (prevState.SCENE_INFO.SceneName != m_CurrnetState.SCENE_INFO.SceneName)
             {
-                m_Operation = Application.LoadLevelAsync(m_CurrnetState.SCENE_INFO.SceneName);
+                m_Operation = Application.LoadLevelAsync(m_CurrnetState.SCENE_INFO.SceneName);// 유니티에서 제공하는 씬전환함수. 
                 UIMgr.Instance.ShowLoadingUI(0.0f);
                 m_fElapsedTime = 0;
+                m_fIntervalTime = 0.0f;
             }
             else
             {
