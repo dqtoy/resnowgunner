@@ -11,15 +11,7 @@ public class M_GunnerCharacterInfo{
 	public int C_Price;//5
 	public string C_PurchaseButton;//6
 }
-public class UserInfo{
-	public int Number;
-	public string Name;
-	public int LevelNumber;
-	public int Score;
-	public string Image;
-	public string RatingClass;
-	public string switch_onoff;
-}
+
 public enum GUIMode : int {Normal = 0, SetMode = 1, CharacterSelection = 2};
 	
 public class FriendsLobbyGameManager : MonoBehaviour {
@@ -40,8 +32,7 @@ public class FriendsLobbyGameManager : MonoBehaviour {
 
 	//UserList Ranking 연동
 	public UIGrid RankListGrid;
-	public GameObject LankPrefab;
-	List<UserInfo> users = new List<UserInfo>();
+    public GameObject LankPrefab;
 	public UILabel GemLabel;
 	public UILabel LevelLabel;
 	public UISlider ExpSlider;
@@ -240,7 +231,7 @@ public class FriendsLobbyGameManager : MonoBehaviour {
             {
                 Transform t = go.transform;
                 t.parent = parent.transform;
-                t.localPosition = new Vector3(3.25f - indexer * 3f, 0, 0);
+                t.localPosition = new Vector3(5.5f - indexer * 2.75f, 0, 0);
                 t.localRotation = Quaternion.identity;
                 t.localScale = Vector3.one;
                 t.localScale = new Vector3(0.75f, 0.75f, 0.75f);
@@ -375,45 +366,64 @@ public class FriendsLobbyGameManager : MonoBehaviour {
 		TextAsset ta= Resources.Load ("Lank", typeof(TextAsset )) as TextAsset;
 		string s = ta.text;
 		string[] lines = s.Split('\n');
-		foreach(string line in lines){
+        /*foreach(string line in lines){
 			string[] words = line.Split(',');
 			UserInfo user = new UserInfo();
-			user.Number = Convert.ToInt32(words[0]);
-			user.LevelNumber = Convert.ToInt32(words[1]);
+			user.Number = Convert.ToInt32(words[0]); 
+
+            user.LevelNumber = Convert.ToInt32(words[1]);
 			user.Name = words[5];
 			user.Score = Convert.ToInt32(words[6]);
 			user.Image = words[3];
 			user.RatingClass = words[4];
             user.switch_onoff = words[7];
 			users.Add(user);
-		}
-		users.Sort (delegate(UserInfo x, UserInfo y) {
+		}*/
+        LankMgr.Instance.Sort();
+
+        /*users.Sort (delegate(UserInfo x, UserInfo y) {
 			return x.Number.CompareTo(x.Number);
-		});
-		List<GameObject> itemList = new List<GameObject>();
-		UIGrid grid = RankListGrid.GetComponent<UIGrid>();
-		foreach(UserInfo user in users) {
+		});*/
+        List<GameObject> itemList = new List<GameObject>();
+        UIGrid grid = RankListGrid.GetComponent<UIGrid>();
+        List<LankTemplateData> ranking = LankMgr.Instance.GetLank();
+        foreach (LankTemplateData rank in ranking) {
 
 			GameObject item = NGUITools.AddChild(RankListGrid.gameObject, LankPrefab);
-            
-			//UISprite itemsprite = item.gameObject.GetComponent<UISprite>();
-			//itemsprite.SetAnchor(RankListGrid.transform);
-			UILabel Number = item.transform.FindChild("Number2").GetComponent<UILabel>();
-			Number.text = user.Number.ToString();
+
+            //UISprite itemsprite = item.gameObject.GetComponent<UISprite>();
+            //itemsprite.SetAnchor(RankListGrid.transform);
+            UISprite itemUI = item.GetComponent<UISprite>();
+            itemUI.spriteName = rank.BACK_IMAGE;
+            UILabel Number = item.transform.FindChild("Number2").GetComponent<UILabel>();
+			Number.text = rank.NUMBER.ToString();
 			UISprite RatingClass = item.transform.FindChild("Character").GetComponent<UISprite>();
-			RatingClass.spriteName = user.RatingClass;
-			UILabel LevelNumber = item.transform.FindChild("Image/Star/LevelNumber").GetComponent<UILabel>();
-			LevelNumber.text = user.LevelNumber.ToString();
-			UISprite Star = item.transform.FindChild("Image").transform.FindChild("Star").GetComponent<UISprite>();
-			Star.spriteName = user.Image;
-			UILabel Name = item.transform.FindChild("Name").GetComponent<UILabel>();
-			Name.text = user.Name;
+			RatingClass.spriteName = rank.RATING_CLASS;
+            UISprite Star = item.transform.FindChild("Image").transform.FindChild("Star").GetComponent<UISprite>();
+			Star.spriteName = rank.STAR_IMAGE;
+
+            UILabel LevelNumber = null;
+            if (rank.STAR_IMAGE.Equals("025_star_empt".Trim()))
+            {
+                LevelNumber = item.transform.FindChild("Image/Star/LevelNumber").GetComponent<UILabel>();
+                LevelNumber.text = rank.LEVEL_NUMBER.ToString();
+                LevelNumber.color = Color.yellow;
+            }
+
+            else
+            {
+                LevelNumber = item.transform.FindChild("Image/Star/LevelNumber").GetComponent<UILabel>();
+                LevelNumber.text = rank.LEVEL_NUMBER.ToString();
+                LevelNumber.color = Color.black;
+            }
+
+            UILabel Name = item.transform.FindChild("Name").GetComponent<UILabel>();
+			Name.text = rank.NAME;
 			UILabel Score = item.transform.FindChild ("Score").GetComponent<UILabel>();
-			Score.text = user.Score.ToString();
+			Score.text = rank.SCORE.ToString();
             UISprite OnOff = item.transform.FindChild("OnOff").GetComponent<UISprite>();
-            OnOff.spriteName = user.switch_onoff;
-            //UISprite OnOff = item.transform.FindChild("OnOff").GetComponent<UISprite>();
-            //OnOff.spriteName = "035_btn_swich_bar";
+            OnOff.spriteName = rank.SWITCH_ONOFF;
+            
 
             //UISprite group = item.transform.FindChild("Icon").GetComponent<UISprite>();
             //group.spriteName = GetSpriteAnyPangGroup(user.group.ToString ());
