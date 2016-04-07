@@ -363,9 +363,9 @@ public class FriendsLobbyGameManager : MonoBehaviour {
 	}
 
 	void LoadRanking(){
-		TextAsset ta= Resources.Load ("Lank", typeof(TextAsset )) as TextAsset;
-		string s = ta.text;
-		string[] lines = s.Split('\n');
+		//TextAsset ta= Resources.Load ("Lank", typeof(TextAsset )) as TextAsset;
+		//string s = ta.text;
+		//string[] lines = s.Split('\n');
         /*foreach(string line in lines){
 			string[] words = line.Split(',');
 			UserInfo user = new UserInfo();
@@ -384,7 +384,9 @@ public class FriendsLobbyGameManager : MonoBehaviour {
         /*users.Sort (delegate(UserInfo x, UserInfo y) {
 			return x.Number.CompareTo(x.Number);
 		});*/
-        List<GameObject> itemList = new List<GameObject>();
+        //List<GameObject> itemList = new List<GameObject>();
+
+        // MinGoo 4월 7일 추가한 코드
         UIGrid grid = RankListGrid.GetComponent<UIGrid>();
         List<LankTemplateData> ranking = LankMgr.Instance.GetLank();
         foreach (LankTemplateData rank in ranking) {
@@ -410,7 +412,7 @@ public class FriendsLobbyGameManager : MonoBehaviour {
                 LevelNumber.color = Color.yellow;
             }
 
-            else
+            else if(rank.STAR_IMAGE.Equals("026_star".Trim()))
             {
                 LevelNumber = item.transform.FindChild("Image/Star/LevelNumber").GetComponent<UILabel>();
                 LevelNumber.text = rank.LEVEL_NUMBER.ToString();
@@ -427,17 +429,18 @@ public class FriendsLobbyGameManager : MonoBehaviour {
 
             //UISprite group = item.transform.FindChild("Icon").GetComponent<UISprite>();
             //group.spriteName = GetSpriteAnyPangGroup(user.group.ToString ());
-            itemList.Add(item);
+            //itemList.Add(item);
 
-			print ("itemList : "+itemList);
+			//print ("itemList : "+itemList);
 
 		}
-		RankListGrid.Reposition();
-		arrangeItems ();
-        foreach (GameObject item in itemList) { 
+        RankListGrid.transform.parent.GetComponent<UIScrollView>().ResetPosition();
+        RankListGrid.Reposition();
+		//arrangeItems ();
+        //foreach (GameObject item in itemList) { 
 
             //item.GetComponent<UIWidget>().SetAnchor(grid.gameObject);
-        }
+        //}
 //		float i = 0;
 //		foreach (GameObject _item in itemList) {
 //			_item.GetComponent<UISprite>().SetAnchor(RankListGrid.transform);

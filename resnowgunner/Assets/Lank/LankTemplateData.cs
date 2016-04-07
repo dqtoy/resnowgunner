@@ -3,13 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 public class LankTemplateData
 { 
+    // 프로퍼티 화
+    // get set
+    // 원래 계획은 멤버 변수를 프로퍼티화
     public int NUMBER { get; set; }
     public int LEVEL_NUMBER { get; set; }
+
     public string BACK_IMAGE { get; set; }
     public string STAR_IMAGE { get; set; }
     public string RATING_CLASS { get; set; }
+
     public string NAME { get; set; }
     public int SCORE { get; set; }
+
     public string SWITCH_ONOFF { get; set; }
 
     public LankTemplateData(SimpleJSON.JSONNode nodeData)
