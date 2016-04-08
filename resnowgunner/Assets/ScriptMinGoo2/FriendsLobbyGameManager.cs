@@ -434,7 +434,9 @@ public class FriendsLobbyGameManager : MonoBehaviour {
 			//print ("itemList : "+itemList);
 
 		}
-        RankListGrid.transform.parent.GetComponent<UIScrollView>().ResetPosition();
+        //RankListGrid.transform.parent.GetComponent<UIScrollView>().ResetPosition();
+        RankListGrid.sorting = UIGrid.Sorting.None;
+
         RankListGrid.Reposition();
 		//arrangeItems ();
         //foreach (GameObject item in itemList) { 
