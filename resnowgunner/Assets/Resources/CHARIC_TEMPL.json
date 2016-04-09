@@ -1,0 +1,132 @@
+{
+	"CHARIC_TEMPLATE": {
+		"CHARACTER_1": {
+			"NAME": "명랑한 헨리군",
+			"PREFAM_NAME": "NONE_TYPE_01",
+			"RACE": "HUMAN",
+			"HEALTH": 100,
+			"DAY_SPEED": 0.8,
+			"NIGHT_SPEED": 1,
+			"EXTRA": [
+				"PLUS_EXP"
+			],
+			"EXTRA_PARAM": [
+				0.15
+			],
+			"LEVEL": 0,
+			"PURCHASING": "Y",
+			"HOBBY": "캠핑",
+			"PRICE": 500
+		},
+		"CHARACTER_2": {
+			"NAME": "겁쟁이 레비양",
+			"PREFAM_NAME": "NONE_TYPE_02",
+			"RACE": "ELF",
+			"HEALTH": 80,
+			"DAY_SPEED": 1,
+			"NIGHT_SPEED": 1.2,
+			"EXTRA": [
+				"PLUS_SHIELDS"
+			],
+			"EXTRA_PARAM": [
+				0.2
+			],
+			"LEVEL": 1,
+			"PURCHASING": "N",
+			"HOBBY": "독서",
+			"PRICE": 500
+		},
+		"CHARACTER_JOHN": {
+			"NAME": "용감한 존",
+			"PREFAM_NAME": "HUMAN_TYPE_JOHN",
+			"RACE": "HUMAN",
+			"HEALTH": 108,
+			"DAY_SPEED": 1.2,
+			"NIGHT_SPEED": 1,
+			"EXTRA": [
+				"PLUS_DAY_SPEED"
+			],
+			"EXTRA_PARAM": [
+				1.2
+			],
+			"LEVEL": 1,
+			"PURCHASING": "N",
+			"HOBBY": "운동",
+			"PRICE": 1350
+		},
+		"CHARACTER_MARTIN": {
+			"NAME": "춤추는 마틴",
+			"PREFAM_NAME": "HUMAN_TYPE_MARTIN",
+			"RACE": "HUMAN",
+			"HEALTH": 108,
+			"DAY_SPEED": 1,
+			"NIGHT_SPEED": 1.2,
+			"EXTRA": [
+				"PLUS_NIGHT_SPEED"
+			],
+			"EXTRA_PARAM": [
+				1.2
+			],
+			"LEVEL": 1,
+			"PURCHASING": "N",
+			"HOBBY": "춤",
+			"PRICE": 1350
+		},
+		"CHARACTER_RICHARD": {
+			"NAME": "재밌는 리차드",
+			"PREFAM_NAME": "HUMAN_TYPE_RICHARD",
+			"RACE": "HUMAN",
+			"HEALTH": 120,
+			"DAY_SPEED": 1,
+			"NIGHT_SPEED": 1.1,
+			"EXTRA": [
+				"PLUS_HP_UP"
+			],
+			"EXTRA_PARAM": [
+				1.5
+			],
+			"LEVEL": 2,
+			"PURCHASING": "N",
+			"HOBBY": "피규어 수집",
+			"PRICE": 2700
+		},
+		"CHARACTER_ROBERT": {
+			"NAME": "똑똑한 로버츠",
+			"PREFAM_NAME": "HUMAN_TYPE_ROBERT",
+			"RACE": "HUMAN",
+			"HEALTH": 150,
+			"DAY_SPEED": 1.1,
+			"NIGHT_SPEED": 1.1,
+			"EXTRA": [
+				"PLUS_CONFLICT_IGNORE"
+			],
+			"EXTRA_PARAM": [
+				8
+			],
+			"LEVEL": 5,
+			"PURCHASING": "N",
+			"HOBBY": "요리",
+			"PRICE": 3800
+		},
+		"CHARACTER_CATHERINE": {
+			"NAME": "고집쟁이 캐서린",
+			"PREFAM_NAME": "WORGEN_TYPE_CATHERINE",
+			"RACE": "WORGEN",
+			"HEALTH": 180,
+			"DAY_SPEED": 0.6,
+			"NIGHT_SPEED": 1.28,
+			"EXTRA": [
+				"PLUS_HP_UP",
+				" PLUS_CONFLICT_IGNORE"
+			],
+			"EXTRA_PARAM": [
+				1.8,
+				12
+			],
+			"LEVEL": 7,
+			"PURCHASING": "N",
+			"HOBBY": "락",
+			"PRICE": 0
+		}
+	}
+}
