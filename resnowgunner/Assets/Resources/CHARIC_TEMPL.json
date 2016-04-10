@@ -1,6 +1,7 @@
 {
 	"CHARIC_TEMPLATE": {
 		"CHARACTER_1": {
+			"CHARACTER_TYPE": 1,
 			"NAME": "명랑한 헨리군",
 			"PREFAM_NAME": "NONE_TYPE_01",
 			"RACE": "HUMAN",
@@ -19,6 +20,7 @@
 			"PRICE": 500
 		},
 		"CHARACTER_2": {
+			"CHARACTER_TYPE": 2,
 			"NAME": "겁쟁이 레비양",
 			"PREFAM_NAME": "NONE_TYPE_02",
 			"RACE": "ELF",
@@ -37,6 +39,7 @@
 			"PRICE": 500
 		},
 		"CHARACTER_JOHN": {
+			"CHARACTER_TYPE": 3,
 			"NAME": "용감한 존",
 			"PREFAM_NAME": "HUMAN_TYPE_JOHN",
 			"RACE": "HUMAN",
@@ -55,6 +58,7 @@
 			"PRICE": 1350
 		},
 		"CHARACTER_MARTIN": {
+			"CHARACTER_TYPE": 3,
 			"NAME": "춤추는 마틴",
 			"PREFAM_NAME": "HUMAN_TYPE_MARTIN",
 			"RACE": "HUMAN",
@@ -73,6 +77,7 @@
 			"PRICE": 1350
 		},
 		"CHARACTER_RICHARD": {
+			"CHARACTER_TYPE": 3,
 			"NAME": "재밌는 리차드",
 			"PREFAM_NAME": "HUMAN_TYPE_RICHARD",
 			"RACE": "HUMAN",
@@ -91,6 +96,7 @@
 			"PRICE": 2700
 		},
 		"CHARACTER_ROBERT": {
+			"CHARACTER_TYPE": 3,
 			"NAME": "똑똑한 로버츠",
 			"PREFAM_NAME": "HUMAN_TYPE_ROBERT",
 			"RACE": "HUMAN",
@@ -109,6 +115,7 @@
 			"PRICE": 3800
 		},
 		"CHARACTER_CATHERINE": {
+			"CHARACTER_TYPE": 4,
 			"NAME": "고집쟁이 캐서린",
 			"PREFAM_NAME": "WORGEN_TYPE_CATHERINE",
 			"RACE": "WORGEN",
