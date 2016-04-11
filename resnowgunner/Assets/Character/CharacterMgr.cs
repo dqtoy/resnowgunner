@@ -50,14 +50,38 @@ public class CharacterMgr : BaseMgr<CharacterMgr>
                 JSONClass chatemple = chajson["CHARIC_TEMPLATE"] as JSONClass;
                 foreach (KeyValuePair<string, JSONNode> keyValue in chatemple)
                 {
-                    //m_dicTemplateData
+                    m_dicTemplateData.Add(keyValue.Key, new CharacterTemplateData(keyValue.Key, keyValue.Value));
                 }
             }
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        //sjh ~JSON Parsing
+
+        //Init();
+    }
+
+    /*public GameCharacter AddCharacter(string strTemplateKey)
+    {
+        CharacterTemplateData templateData = GetTemplate(strTemplateKey);
+
+        if (templateData == null)
+            return null;
+
+        GameCharacter myCharacter = null;
+
+        if (m_dicGameCharacter.TryGetValue(strTemplateKey, out myCharacter) != true)
+        {
+            GameCharacter gameCharacter = new GameCharacter();
+            gameCharacter.SetTemplate(templateData);
+            m_dicGameCharacter.Add(strTemplateKey, gameCharacter);
+            return gameCharacter;
+        }
+
+        return myCharacter;
+   
+    }*/
+
+    // Update is called once per frame
+    void Update () {
 	
 	}
 }
