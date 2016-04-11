@@ -155,7 +155,7 @@ public class FriendsLobbyGameManager : MonoBehaviour {
 		if(UIMode == (int)GUIMode.Normal){
             //Lobby.SetActive (false);
             Player_Background.SetActive (true);
-            // MinGoo, 2016년 3월 30일 추가된 코드
+            // Min-Goo, 2016년 3월 30일 추가된 코드
             UIMgr.Instance.HideCharacterView(eCharacterViewObjectType.CharacterView_1);
             UIMgr.Instance.ShowCharacterView(eCharacterViewObjectType.CharacterView_2);
             UIMode = (int)GUIMode.CharacterSelection;
@@ -209,7 +209,7 @@ public class FriendsLobbyGameManager : MonoBehaviour {
 		});
 		int indexer = 0;
 
-        // MinGoo, 2016년 3월 30일 추가된 코드
+        // Min-Goo, 2016년 3월 30일 추가된 코드
         UIMgr.Instance.HideCharacterView(eCharacterViewObjectType.CharacterView_1);
         UIMgr.Instance.ShowCharacterView(eCharacterViewObjectType.CharacterView_2);
         GameObject CharacterView_2 = UIMgr.Instance.ShowCharacterViewGameObject(eCharacterViewObjectType.CharacterView_2);
@@ -225,7 +225,7 @@ public class FriendsLobbyGameManager : MonoBehaviour {
             //Name.text = Gunner.C_Name.ToString();
             //NGUITools.AdjustDepth (charteritem.transform.FindChild("Gunner").gameObject, 1);
 
-            // MinGoo, 2016년 3월 30일 추가된 코드
+            // Min-Goo, 2016년 3월 30일 추가된 코드
             GameObject go = GameObject.Instantiate(GunnerPrefab) as GameObject;
             if (go != null && parent != null)
             {
@@ -386,7 +386,7 @@ public class FriendsLobbyGameManager : MonoBehaviour {
 		});*/
         //List<GameObject> itemList = new List<GameObject>();
 
-        // MinGoo 4월 7일 추가한 코드
+        // Min-Goo 4월 7일 추가한 코드
         UIGrid grid = RankListGrid.GetComponent<UIGrid>();
         List<LankTemplateData> ranking = LankMgr.Instance.GetLank();
         foreach (LankTemplateData rank in ranking) {
