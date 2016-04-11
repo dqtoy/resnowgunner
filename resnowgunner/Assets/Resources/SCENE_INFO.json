@@ -13,6 +13,18 @@
 				"PF_UI_FriendsLobby"
 			],
 			"OBJECT": []
+		},
+		"STATE_TYPE_MAP_LOADING": {
+			"SCENE_NAME": "MapLoading",
+			"UI": [
+				"PF_UI_3D_PROGRESS_MAP"
+			],
+			"OBJECT": []
+		},
+		"STATE_TYPE_STAGE": {
+			"SCENE_NAME": "StageScene",
+			"UI": [],
+			"OBJECT": []
 		}
 	}
 }

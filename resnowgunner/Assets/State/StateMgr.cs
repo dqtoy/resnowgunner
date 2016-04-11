@@ -9,7 +9,9 @@ public enum eStateType
     STATE_TYPE_NONE,
     STATE_TYPE_LOGO,          // 20160328 resnowgunner
     STATE_TYPE_FRIENDS_LOBBY, // 20160328 resnowgunner
+    STATE_TYPE_MAP_LOADING,  // 20160411 Min-Goo
     STATE_TYPE_STAGE,         // 20160328 reTemp
+    
     STATE_TYPE_COUNT,
 }
 
@@ -95,51 +97,80 @@ public class StateMgr : BaseMgr<StateMgr>
 
         StartState(eStateType.STATE_TYPE_LOGO);
 
-        RegisterChild(eStateType.STATE_TYPE_LOGO, eStateType.STATE_TYPE_FRIENDS_LOBBY);
+        RegisterChild(eStateType.STATE_TYPE_LOGO, eStateType.STATE_TYPE_FRIENDS_LOBBY);         // LOGO -> FRIENDS_LOBBY
         RegisterChild(eStateType.STATE_TYPE_LOGO, eStateType.STATE_TYPE_STAGE);
 
-        RegisterChild(eStateType.STATE_TYPE_FRIENDS_LOBBY, eStateType.STATE_TYPE_LOGO);
-        RegisterChild(eStateType.STATE_TYPE_FRIENDS_LOBBY, eStateType.STATE_TYPE_STAGE);
+        RegisterChild(eStateType.STATE_TYPE_FRIENDS_LOBBY, eStateType.STATE_TYPE_LOGO);         // FRIENDS_LOBBY -> LOGO
+        RegisterChild(eStateType.STATE_TYPE_FRIENDS_LOBBY, eStateType.STATE_TYPE_MAP_LOADING); // FRIENDS_LOBBY -> MAP_LOADING
+        RegisterChild(eStateType.STATE_TYPE_FRIENDS_LOBBY, eStateType.STATE_TYPE_STAGE);        // FRIENDS_LOBBY -> STAGE
 
-        RegisterChild(eStateType.STATE_TYPE_STAGE, eStateType.STATE_TYPE_LOGO);
-        RegisterChild(eStateType.STATE_TYPE_STAGE, eStateType.STATE_TYPE_FRIENDS_LOBBY);
+        RegisterChild(eStateType.STATE_TYPE_MAP_LOADING, eStateType.STATE_TYPE_STAGE);
+
+        RegisterChild(eStateType.STATE_TYPE_STAGE, eStateType.STATE_TYPE_FRIENDS_LOBBY);        // STAGE         -> MAP_LOADING
+                                                                                                // 게임 결과창   -> 로비
+
+
     }
 
     void Update()
     {
-        if (m_Operation != null) // 씬전환중 ?
+        if (m_CurrnetState != _GetState(eStateType.STATE_TYPE_MAP_LOADING))
         {
-            m_fIntervalTime = m_fElapsedTime;
-            m_fElapsedTime += Time.smoothDeltaTime;
-
-            if (m_fElapsedTime - m_fIntervalTime <= 0.01f)
-                m_fElapsedTime += 0.01f;
-
-            if (m_fElapsedTime > 2.0f) m_fElapsedTime = 2.0f;
-
-
-            UIMgr.Instance.ShowLoadingUI(m_fElapsedTime / 2.0f);
-            //UIMgr.Instance.ShowLoadingUI(m_Operation.progress);
-
-            if (m_Operation.isDone == true && m_fElapsedTime >= 2.0f)
+            if (m_Operation != null) // 씬전환중 ?
             {
-                // 완료
-                m_Operation = null;
-                UIMgr.Instance.HideLoadingUI();
+                m_fIntervalTime = m_fElapsedTime;
+                m_fElapsedTime += Time.smoothDeltaTime;
 
-                if (m_CurrnetState != null)
+                if (m_fElapsedTime - m_fIntervalTime <= 0.01f)
+                    m_fElapsedTime += 0.01f;
+
+                if (m_fElapsedTime > 2.0f) m_fElapsedTime = 2.0f;
+
+
+                UIMgr.Instance.ShowLoadingUI(m_fElapsedTime / 2.0f);
+                //UIMgr.Instance.ShowLoadingUI(m_Operation.progress);
+
+                if (m_Operation.isDone == true && m_fElapsedTime >= 2.0f)
                 {
-                    m_CurrnetState.StartState();
-                }
+                    // 완료
+                    m_Operation = null;
+                    UIMgr.Instance.HideLoadingUI();
 
-            }
-            else
-            {
-                // 진행중
-                return;
+                    if (m_CurrnetState != null)
+                    {
+                        m_CurrnetState.StartState();
+                    }
+
+                }
+                else
+                {
+                    // 진행중
+                    return;
+                }
             }
         }
+        else if (m_CurrnetState == _GetState(eStateType.STATE_TYPE_MAP_LOADING))
+        {
+            if (m_Operation != null) // 씬전환중 ?
+            { 
+                if (m_Operation.isDone == true)
+                {
+                    // 완료
+                    m_Operation = null;
+                    
+                    if (m_CurrnetState != null)
+                    {
+                        m_CurrnetState.StartState();
+                    }
 
+                }
+                else
+                {
+                    // 진행중
+                    return;
+                }
+            }
+        }
 
         if (m_CurrnetState == null)
             return;
@@ -155,9 +186,18 @@ public class StateMgr : BaseMgr<StateMgr>
             if (prevState.SCENE_INFO.SceneName != m_CurrnetState.SCENE_INFO.SceneName)
             {
                 m_Operation = Application.LoadLevelAsync(m_CurrnetState.SCENE_INFO.SceneName);// 유니티에서 제공하는 씬전환함수. 
-                UIMgr.Instance.ShowLoadingUI(0.0f);
-                m_fElapsedTime = 0;
-                m_fIntervalTime = 0.0f;
+                if (m_CurrnetState != _GetState(eStateType.STATE_TYPE_MAP_LOADING))
+                {
+                    UIMgr.Instance.ShowLoadingUI(0.0f);
+                    m_fElapsedTime = 0;
+                    m_fIntervalTime = 0.0f;
+                }
+                else if (m_CurrnetState == _GetState(eStateType.STATE_TYPE_MAP_LOADING))
+                {
+
+                }
+
+
             }
             else
             {
@@ -231,7 +271,20 @@ public class StateMgr : BaseMgr<StateMgr>
                     }
                 }
                 break;
+            case eStateType.STATE_TYPE_MAP_LOADING:
+                {
+                    GameObject stateObject = new GameObject();
+                    stateObject.name = eStateType.STATE_TYPE_MAP_LOADING.ToString("F");
 
+                    DontDestroyOnLoad(stateObject);
+
+                    makeState = stateObject.AddComponent<MapLoadingState>();
+                    if (m_dicSceneInfo.ContainsKey(stateType))
+                    {
+                        makeState.SCENE_INFO = m_dicSceneInfo[stateType];
+                    }
+                }
+                break;
             case eStateType.STATE_TYPE_STAGE:
                 {
                     GameObject stateObject = new GameObject();
@@ -239,7 +292,7 @@ public class StateMgr : BaseMgr<StateMgr>
 
                     DontDestroyOnLoad(stateObject);
 
-//                    makeState = stateObject.AddComponent<StageState>();
+                    makeState = stateObject.AddComponent<StageState>();
                     if (m_dicSceneInfo.ContainsKey(stateType))
                     {
                         makeState.SCENE_INFO = m_dicSceneInfo[stateType];
