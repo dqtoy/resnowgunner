@@ -249,6 +249,8 @@ GameObject:
   - 114: {fileID: 11499712}
   - 54: {fileID: 5455236}
   - 65: {fileID: 6513050}
+  - 82: {fileID: 8282976}
+  - 81: {fileID: 8135456}
   m_Layer: 8
   m_Name: PF_UI_3D_PROGRESS_MAP
   m_TagString: Untagged
@@ -283,25 +285,6 @@ GameObject:
   - 114: {fileID: 11407338}
   m_Layer: 8
   m_Name: Stage3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &156362
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 490220}
-  - 81: {fileID: 8130358}
-  - 82: {fileID: 8283838}
-  - 114: {fileID: 11459764}
-  - 114: {fileID: 11428706}
-  m_Layer: 0
-  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -505,7 +488,6 @@ Transform:
   - {fileID: 487720}
   - {fileID: 462598}
   - {fileID: 454394}
-  - {fileID: 490220}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &404888
@@ -837,18 +819,6 @@ Transform:
   - {fileID: 481358}
   m_Father: {fileID: 404076}
   m_RootOrder: 3
---- !u!4 &490220
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 156362}
-  m_LocalRotation: {x: -.707106888, y: 0, z: 0, w: .707106769}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 360, y: 359.999939, z: 359.999939}
-  m_Children: []
-  m_Father: {fileID: 404076}
-  m_RootOrder: 11
 --- !u!4 &493492
 Transform:
   m_ObjectHideFlags: 1
@@ -946,19 +916,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 752, y: 502, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!81 &8130358
+--- !u!81 &8135456
 AudioListener:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 156362}
+  m_GameObject: {fileID: 148738}
   m_Enabled: 1
---- !u!82 &8283838
+--- !u!82 &8282976
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 156362}
+  m_GameObject: {fileID: 148738}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -966,7 +936,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Priority: 128
   DopplerLevel: 1
@@ -1016,7 +986,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1520,19 +1490,6 @@ MonoBehaviour:
   mAtlas: {fileID: 11465936, guid: 65cce0429bf23584d8601b18f6f5bfca, type: 2}
   mSpriteName: Dot-Off
   mFillCenter: 1
---- !u!114 &11428706
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 156362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073c91b2f1d8da9459e894edc944ef2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MapPlayer: {fileID: 0}
-  m_IsProgreesEnd: 0
 --- !u!114 &11429620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1838,18 +1795,6 @@ MonoBehaviour:
   mAtlas: {fileID: 11465936, guid: 65cce0429bf23584d8601b18f6f5bfca, type: 2}
   mSpriteName: lvlgrass
   mFillCenter: 1
---- !u!114 &11459764
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 156362}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62fb17433c51a44b59a096889248b940, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
 --- !u!114 &11463084
 MonoBehaviour:
   m_ObjectHideFlags: 1

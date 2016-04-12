@@ -184,7 +184,7 @@ public class StateMgr : BaseMgr<StateMgr>
             prevState.EndState();
 
             if (prevState.SCENE_INFO.SceneName != m_CurrnetState.SCENE_INFO.SceneName)
-            {
+            {// 이전 씬이름 과 현재 씬 이름이 같지 않을 때
                 m_Operation = Application.LoadLevelAsync(m_CurrnetState.SCENE_INFO.SceneName);// 유니티에서 제공하는 씬전환함수. 
                 if (m_CurrnetState != _GetState(eStateType.STATE_TYPE_MAP_LOADING))
                 {
@@ -192,16 +192,11 @@ public class StateMgr : BaseMgr<StateMgr>
                     m_fElapsedTime = 0;
                     m_fIntervalTime = 0.0f;
                 }
-                else if (m_CurrnetState == _GetState(eStateType.STATE_TYPE_MAP_LOADING))
-                {
-
-                }
-
-
             }
             else
             {
-                m_CurrnetState.StartState();
+                if (m_CurrnetState != _GetState(eStateType.STATE_TYPE_MAP_LOADING))
+                    m_CurrnetState.StartState();
             }
 
         }
