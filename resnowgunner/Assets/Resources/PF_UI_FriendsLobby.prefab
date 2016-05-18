@@ -346,6 +346,7 @@ GameObject:
   - 114: {fileID: 11427564}
   - 114: {fileID: 11434346}
   - 54: {fileID: 5497144}
+  - 114: {fileID: 11430942}
   m_Layer: 8
   m_Name: PF_UI_FriendsLobby
   m_TagString: Untagged
@@ -1682,6 +1683,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 419566}
   - 114: {fileID: 11400232}
+  - 114: {fileID: 11460926}
   m_Layer: 8
   m_Name: Char_UI_Grid
   m_TagString: Untagged
@@ -1833,6 +1835,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 469968}
   - 114: {fileID: 11455516}
+  - 114: {fileID: 11443946}
   m_Layer: 8
   m_Name: RankGrid
   m_TagString: Untagged
@@ -2889,7 +2892,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 1, z: 0}
+  m_LocalPosition: {x: 2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 440572}
@@ -3124,7 +3127,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 207, y: -203, z: 0}
+  m_LocalPosition: {x: 207, y: -204, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 458442}
@@ -4193,7 +4196,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3014
+  startingRenderQueue: 3012
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -4464,13 +4467,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: .580392182, g: .48627454, b: .223529428, a: 1}
   mPivot: 4
-  mWidth: 1280
+  mWidth: 1278
   mHeight: 720
   mDepth: 1
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.77777779
+  aspectRatio: 1.77499998
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -5785,7 +5788,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3018
+  startingRenderQueue: 3014
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
@@ -6042,6 +6045,22 @@ MonoBehaviour:
   disabledSprite2D: {fileID: 0}
   pixelSnap: 1
   onClick: []
+--- !u!114 &11430942
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e430da2a163c8f14793d051aab02a669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UICamera: {fileID: 11473708}
+  m_UIGridObject: {fileID: 0}
+  myobjestlists:
+  - {fileID: 11443946}
+  - {fileID: 11460926}
 --- !u!114 &11431160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6639,6 +6658,18 @@ MonoBehaviour:
   mAtlas: {fileID: 11465936, guid: 65cce0429bf23584d8601b18f6f5bfca, type: 2}
   mSpriteName: btn_go_setting
   mFillCenter: 1
+--- !u!114 &11443946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31409d8295040a747829fb484372e9cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Grid: {fileID: 11455516}
 --- !u!114 &11444378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7531,6 +7562,18 @@ MonoBehaviour:
   disabledSprite2D: {fileID: 0}
   pixelSnap: 0
   onClick: []
+--- !u!114 &11460926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31409d8295040a747829fb484372e9cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Grid: {fileID: 11400232}
 --- !u!114 &11461892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7877,13 +7920,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 1281
+  mWidth: 1279
   mHeight: 720
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.7791667
+  aspectRatio: 1.77638888
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -9553,7 +9596,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3013
+  startingRenderQueue: 3012
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3

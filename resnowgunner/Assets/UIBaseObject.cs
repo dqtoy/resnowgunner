@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum eUIObjectType
+public enum eUIBaseObjectType
 {
     TYPE_NULL,      // UI가 없는데?
+    TYPE_SCENE,     // UI가 Scene Type?
     TYPE_NORMAL,    // 일반 UI
     TYPE_LOADING,   // 로딩
     TYPE_POPUP,     // 팝업 창
@@ -12,7 +13,7 @@ public enum eUIObjectType
     TYPE_CHECK,     // 확인 창 - 필요해서
 }
 
-public enum eUIButtonElementType
+public enum eUIBaseButtonElementType
 {
     TYPE_NO,
     TYPE_CLICK,
@@ -21,20 +22,20 @@ public enum eUIButtonElementType
     TYPE_BACK,
     TYPE_STAGE,
 }
-public class UIObject : CacheObject {
+public class UIBaseObject : CacheObject {
 
     // CacheObect 의 SelfObject 와 Transform를 바꾸자
-    UIObject m_UIObserver = null;
-
-    public UIObject UI_OBSERVER_COMPONENT
+    UIBaseObject m_UIObserver = null;
+    
+    public UIBaseObject UI_OBSERVER_COMPONENT
     {
         get { return m_UIObserver; }
         set { m_UIObserver = value; }
     }
 
-    eUIObjectType m_uiobjectState = eUIObjectType.TYPE_NORMAL;
+    eUIBaseObjectType m_uiobjectState = eUIBaseObjectType.TYPE_NORMAL;
 
-    public eUIObjectType OBJECT_STATE
+    public eUIBaseObjectType OBJECT_STATE
     {
         get
         {
@@ -71,6 +72,9 @@ public class UIObject : CacheObject {
         }
 
     }
+
+    
+
 
     public virtual object GetEventData(string keyData, params object[] datas)
     {

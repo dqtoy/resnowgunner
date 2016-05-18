@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UIObserverComponent : UIObject {
+public class UIObserverComponent : UIBaseObject {
 
     public override object GetEventData(string keyData, params object[] datas)
     {
