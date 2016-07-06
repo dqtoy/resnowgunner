@@ -3,7 +3,7 @@
 		"CHARACTER_1": {
 			"CHARACTER_TYPE": 1,
 			"NAME": "명랑한 헨리군",
-			"PREFAB_NAME": "NONE_TYPE_01",
+			"PREFAB_NAME": "GUNNER_HENRY",
 			"RACE": "HUMAN",
 			"HEALTH": 100,
 			"DAY_SPEED": 0.8,
@@ -22,7 +22,7 @@
 		"CHARACTER_2": {
 			"CHARACTER_TYPE": 2,
 			"NAME": "겁쟁이 레비양",
-			"PREFAB_NAME": "NONE_TYPE_02",
+			"PREFAB_NAME": "ARCHER_LEVY",
 			"RACE": "ELF",
 			"HEALTH": 80,
 			"DAY_SPEED": 1,
@@ -41,7 +41,7 @@
 		"CHARACTER_JOHN": {
 			"CHARACTER_TYPE": 3,
 			"NAME": "용감한 존",
-			"PREFAB_NAME": "HUMAN_TYPE_JOHN",
+			"PREFAB_NAME": "GUNNER_JOHN",
 			"RACE": "HUMAN",
 			"HEALTH": 108,
 			"DAY_SPEED": 1.2,
@@ -60,7 +60,7 @@
 		"CHARACTER_MARTIN": {
 			"CHARACTER_TYPE": 3,
 			"NAME": "춤추는 마틴",
-			"PREFAB_NAME": "HUMAN_TYPE_MARTIN",
+			"PREFAB_NAME": "GUNNER_MARTIN",
 			"RACE": "HUMAN",
 			"HEALTH": 108,
 			"DAY_SPEED": 1,
@@ -79,7 +79,7 @@
 		"CHARACTER_RICHARD": {
 			"CHARACTER_TYPE": 3,
 			"NAME": "재밌는 리차드",
-			"PREFAB_NAME": "HUMAN_TYPE_RICHARD",
+			"PREFAB_NAME": "GUNNER_RICHARD",
 			"RACE": "HUMAN",
 			"HEALTH": 120,
 			"DAY_SPEED": 1,
@@ -98,7 +98,7 @@
 		"CHARACTER_ROBERT": {
 			"CHARACTER_TYPE": 3,
 			"NAME": "똑똑한 로버츠",
-			"PREFAB_NAME": "HUMAN_TYPE_ROBERT",
+			"PREFAB_NAME": "GUNNER_ROBERT",
 			"RACE": "HUMAN",
 			"HEALTH": 150,
 			"DAY_SPEED": 1.1,
@@ -117,14 +117,14 @@
 		"CHARACTER_CATHERINE": {
 			"CHARACTER_TYPE": 4,
 			"NAME": "고집쟁이 캐서린",
-			"PREFAB_NAME": "WORGEN_TYPE_CATHERINE",
+			"PREFAB_NAME": "WORGEN_CATHERINE",
 			"RACE": "WORGEN",
 			"HEALTH": 180,
 			"DAY_SPEED": 0.6,
 			"NIGHT_SPEED": 1.28,
 			"EXTRA": [
 				"PLUS_HP_UP",
-				" PLUS_CONFLICT_IGNORE"
+				"PLUS_CONFLICT_IGNORE"
 			],
 			"EXTRA_PARAM": [
 				1.8,

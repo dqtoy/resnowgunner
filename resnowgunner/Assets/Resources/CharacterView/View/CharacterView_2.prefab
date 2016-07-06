@@ -55,12 +55,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199268}
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: 0, y: .725000024, z: 1.89999998}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
+  m_LocalPosition: {x: -.200000003, y: .224999994, z: 1.89999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 467104}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &467104
 Transform:
   m_ObjectHideFlags: 1
@@ -68,11 +68,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 140584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 20, z: 0}
+  m_LocalPosition: {x: 20000, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 467176}
   - {fileID: 417218}
+  - {fileID: 467176}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &467176
@@ -86,7 +86,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 467104}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!20 &2008366
 Camera:
   m_ObjectHideFlags: 1
@@ -95,7 +95,7 @@ Camera:
   m_GameObject: {fileID: 199268}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -107,7 +107,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.79999995
+  orthographic size: 1.20000005
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
