@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 public enum eCharacterType
 {
     CHARACTER_TYPE_NONE,
@@ -17,24 +18,104 @@ public enum eRaceType
     RACE_TYPE_ELF,
     RACE_TYPE_WORGEN,
 }
+public enum eCharacterKey
+{
+    CHARACTER_KEY_NONE,
+    CHARACTER_1,
+    CHARACTER_2,
+    CHARACTER_JOHN,
+    CHARACTER_MARTIN,
+    CHARACTER_RICHARD,
+    CHARACTER_ROBERT,
+    CHARACTER_CATHERINE,
+    CHARACTER_COUNT,
+}
 public class CharacterTemplateData
 {
-    eCharacterType m_CharacterType = eCharacterType.CHARACTER_TYPE_NONE;
-    eRaceType m_RaceType = eRaceType.RACE_TYPE_NONE;
     // m_FactorTable에 Json으로 기본 수치를 받아놓을것 임
+    //TYPE
+    eCharacterType m_CharacterType = eCharacterType.CHARACTER_TYPE_NONE;
+    //KEY
+    eCharacterKey m_CharacterKey = eCharacterKey.CHARACTER_KEY_NONE;
+    //RACE
+    eRaceType m_RaceType = eRaceType.RACE_TYPE_NONE;
+
+    // m_FactorTable에 Json으로 기본 수치를 받아놓을것임 
+    FactorTable m_FactorTable = new FactorTable();
+
+    public eCharacterType CHARACTER_TYPE
+    {
+        get { return m_CharacterType; }
+    }
+    public eCharacterKey CHARACTER_KEY
+    {
+        get { return m_CharacterKey; }
+    }
+    public eRaceType RACE_TYPE
+    {
+        get { return m_RaceType; }
+    }
 
     string m_strKey   = string.Empty;
     string m_strName  = string.Empty;
-
+    string m_strPrefabName = string.Empty;
+    public string KEY
+    {
+        get { return m_strKey; }
+    }
+    public string NAME
+    {
+        get { return m_strName; }
+    }
+    public string PREFAB_NAME
+    {
+        get { return m_strPrefabName;  }
+    }
     int   m_nHealth   = 0;
     float m_fDaySpd   = 0.0f;
     float m_fNightSpd = 0.0f;
 
+    public int HEALTH
+    {
+        get { return m_nHealth;  }
+    }
+
+    public float DAYSPD
+    {
+        get { return m_fDaySpd; }
+    }
+
+    public float NIGHTSPD
+    {
+        get { return m_fNightSpd; }
+    }
+
     int m_nRequiredLv  = 0;
     bool m_bPurchasing = false;
 
+    public int REQUIRED_LEVEL
+    {
+        get { return m_nRequiredLv; }
+        set { m_nRequiredLv = value; }
+    }
+    public bool IS_PURCHASING
+    {
+        get { return m_bPurchasing; }
+        set { m_bPurchasing = value; }
+    }
     string m_strHobby    = string.Empty;
     int m_nRequiredPrice = 0;
+
+    public string HOBBY
+    {
+        get { return m_strHobby; }
+    }
+    public int REQUIRED_PRICE
+    {
+        get { return m_nRequiredPrice; }
+    }
+
+    public FactorTable FACTOR_TABLE { get { return m_FactorTable; } }
 
     List<string> m_listExtraClass = new List<string>();
     List<float> m_flistExtraClassParam = new List<float>();
@@ -50,9 +131,17 @@ public class CharacterTemplateData
 
         //"CHARACTER_TYPE": 1
         //"NAME": "캐릭터1"
+        for (int i = 0; i < (int)eFactorData.COUNT; ++i)
+        {
+            eFactorData factorData = (eFactorData)i;
+            double valueData = nodeData[factorData.ToString("F")].AsDouble;
+            if (valueData > 0)
+                m_FactorTable.IncreaseData(factorData, valueData);
+        }
         m_CharacterType = (eCharacterType)(nodeData["CHARACTER_TYPE"].AsInt);
+        m_CharacterKey = (eCharacterKey)Enum.Parse(typeof(eCharacterKey), strkey.ToString(), true);
         m_strName = nodeData["NAME"];
-        //m_strPrefabName = nodeData["PREFAB_NAME"];
+        m_strPrefabName = nodeData["PREFAB_NAME"];
 
         FindRace(nodeData["RACE"].Value);
 

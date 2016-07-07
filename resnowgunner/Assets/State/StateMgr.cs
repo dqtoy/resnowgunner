@@ -17,9 +17,9 @@ public enum eStateType
 
 public struct stSceneInfo
 {
-    public string SceneName;
-    public string[] arrUI;
-    public string[] arrObject;
+    public string SceneName;  // 씬의 이름
+    public string[] arrUI;    // Main UIObject
+    public string[] arrObject;// Main Character
 }
 
 public class StateMgr : BaseMgr<StateMgr>
@@ -41,16 +41,15 @@ public class StateMgr : BaseMgr<StateMgr>
             JSONClass nodeData = JSON.Parse(sceneText.text) as JSONClass; // Dictionary가 넘어온다. 
             if (nodeData != null)
             {
-                JSONClass sceneInfoNode = nodeData["SCENE_INFO"] as JSONClass;
-
+                JSONClass sceneInfoNode = nodeData["SCENE_INFO"] as JSONClass; // 멤버 오브젝트를 찾고,
+                // 지역변수로 잠시동안만 쓰게끔 한다.
                 for (int i = (int)eStateType.STATE_TYPE_LOGO; i < (int)eStateType.STATE_TYPE_COUNT; ++i)
                 {
                     JSONClass sceneClass = sceneInfoNode[((eStateType)i).ToString("F")] as JSONClass;
-                    //JSONClass sceneClass = nodeData[((eStateType)i).ToString("F")] as JSONClass;
                     if (sceneClass != null)
                     {
                         stSceneInfo sceneInfo = new stSceneInfo();
-                        sceneInfo.SceneName = sceneClass["SCENE_NAME"];
+                        sceneInfo.SceneName = sceneClass["SCENE_NAME"]; // 씬의 멤버변수를 가져온다.
 
                         JSONArray arrUI = sceneClass["UI"] as JSONArray;
                         if (arrUI != null && arrUI.Count > 0)

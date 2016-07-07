@@ -1,0 +1,413 @@
+fileFormatVersion: 2
+guid: e5a3c9b7de830c3438e75a70276762fc
+timeCreated: 1464629738
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: b_armL0
+    100002: b_armL1
+    100004: b_armR0
+    100006: b_armR1
+    100008: b_body
+    100010: b_head
+    100012: b_hip
+    100014: b_legL0
+    100016: b_legL1
+    100018: b_legR0
+    100020: b_legR1
+    100022: b_root
+    100024: b_sholderL
+    100026: b_sholderR
+    100028: b_weapon
+    100030: //RootNode
+    100032: p_m_mage
+    100034: staff_1
+    100036: b_body1
+    100038: b_body2
+    100040: b_footL
+    100042: b_footR
+    100044: b_weaponL
+    100046: b_weaponR
+    100048: Bip001 Head
+    100050: Bip001 L Toe0
+    100052: Bip001 R Toe0
+    100054: body
+    100056: b_neck
+    400000: b_armL0
+    400002: b_armL1
+    400004: b_armR0
+    400006: b_armR1
+    400008: b_body
+    400010: b_head
+    400012: b_hip
+    400014: b_legL0
+    400016: b_legL1
+    400018: b_legR0
+    400020: b_legR1
+    400022: b_root
+    400024: b_sholderL
+    400026: b_sholderR
+    400028: b_weapon
+    400030: p_m_mage
+    400032: //RootNode
+    400034: staff_1
+    400036: b_body1
+    400038: b_body2
+    400040: b_footL
+    400042: b_footR
+    400044: b_weaponL
+    400046: b_weaponR
+    400048: Bip001 Head
+    400050: Bip001 L Toe0
+    400052: Bip001 R Toe0
+    400054: body
+    400056: b_neck
+    4300000: staff_1
+    4300002: p_m_mage
+    4300004: body
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: p_m_mage
+    13700002: staff_1
+    13700004: body
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 'MuscleClip ''WORGEN@p_m_mage''conversion warning: ''b_root/b_hip/b_body1''
+      has translation animation. It is not supported.
+
+
+      MuscleClip ''WORGEN@p_m_mage'' conversion warning: ''b_root/b_hip/b_body1''
+      is between humanoid transforms and has rotation animation. This might lower
+      retargeting quality.
+
+
+      MuscleClip ''WORGEN@p_m_mage''conversion warning: ''b_root/b_hip/b_body1/b_legL0''
+      has translation animation. It is not supported.
+
+
+      MuscleClip ''WORGEN@p_m_mage''conversion warning: ''b_root/b_hip/b_body1/b_legR0''
+      has translation animation. It is not supported.
+
+
+      MuscleClip ''WORGEN@p_m_mage''conversion warning: ''b_root/b_hip/b_body1/b_body2/b_neck''
+      has translation animation. It is not supported.
+
+
+      MuscleClip ''WORGEN@p_m_mage''conversion warning: ''b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL''
+      has translation animation. It is not supported.
+
+
+      MuscleClip ''WORGEN@p_m_mage'' conversion warning: ''b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL''
+      is between humanoid transforms and has rotation animation. This might lower
+      retargeting quality.
+
+
+      MuscleClip ''WORGEN@p_m_mage''conversion warning: ''b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR''
+      has translation animation. It is not supported.
+
+
+      MuscleClip ''WORGEN@p_m_mage'' conversion warning: ''b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR''
+      is between humanoid transforms and has rotation animation. This might lower
+      retargeting quality.
+
+
+'
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0170000009
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 170
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: b_hip
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_legL0
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_legR0
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_legL1
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_legR1
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_footL
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_footR
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_body2
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_neck
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_armL0
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_armR0
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_armL1
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_armR1
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_weaponL
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_weaponR
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: WORGEN@p_m_mage(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: b_root
+      position: {x: 0, y: .472600013, z: 0}
+      rotation: {x: -.500000358, y: .499999672, z: .499999672, w: .500000358}
+      scale: {x: .99999994, y: .99999994, z: 1}
+      transformModified: 1
+    - name: b_hip
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -.499999642, y: .500000358, z: .499999642, w: .500000358}
+      scale: {x: 1, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: b_body1
+      position: {x: -.0671597421, y: -.00019936396, z: 9.34135755e-08}
+      rotation: {x: -2.08047595e-06, y: 6.93675986e-07, z: -.000398158998, w: .99999994}
+      scale: {x: 1, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: b_body2
+      position: {x: -.250400543, y: -.000199387534, z: -5.53021462e-10}
+      rotation: {x: -3.01176727e-14, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: b_neck
+      position: {x: -.250400543, y: -.000180051196, z: -4.99390029e-10}
+      rotation: {x: -3.01176727e-14, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: b_sholderL
+      position: {x: -6.4849857e-08, y: .000179994517, z: .0204398911}
+      rotation: {x: -.60876137, y: -.000243488117, z: .79335326, w: -.00031503255}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: b_armL0
+      position: {x: -.138908297, y: -1.15960581e-14, z: -6.4849857e-08}
+      rotation: {x: .0494147539, y: .110990681, z: -.00749063026, w: .992563963}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: b_armL1
+      position: {x: -.289931655, y: 8.10623213e-09, z: 0}
+      rotation: {x: -.00122018484, y: .0121618398, z: .0378407687, w: .999209046}
+      scale: {x: 1, y: .99999994, z: 1}
+      transformModified: 1
+    - name: b_weaponL
+      position: {x: -.224313453, y: -8.10623213e-09, z: 0}
+      rotation: {x: -.706825197, y: 7.90777754e-09, z: 1.31677425e-08, w: .707388222}
+      scale: {x: 1, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: b_sholderR
+      position: {x: -6.4849857e-08, y: .000180107876, z: -.0204398911}
+      rotation: {x: .60876137, y: .000241287664, z: .79335326, w: -.00031672098}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: b_armR0
+      position: {x: -.138908297, y: 3.86535269e-15, z: 6.4849857e-08}
+      rotation: {x: -.0494146273, y: -.110989407, z: -.00749051105, w: .992564082}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: b_armR1
+      position: {x: -.289931715, y: 0, z: 0}
+      rotation: {x: .00122022617, y: -.0121614439, z: .0378407873, w: .999209046}
+      scale: {x: .99999994, y: .99999994, z: 1}
+      transformModified: 1
+    - name: b_weaponR
+      position: {x: -.224313483, y: -4.05311606e-09, z: -6.4849857e-08}
+      rotation: {x: .706825197, y: 7.90777754e-09, z: -1.31677425e-08, w: .707388222}
+      scale: {x: 1, y: 1.00000012, z: .99999994}
+      transformModified: 1
+    - name: b_head
+      position: {x: -.226117119, y: -6.33299385e-11, z: -2.41584543e-16}
+      rotation: {x: -7.26559993e-14, y: -1.10427334e-09, z: .000398830569, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: b_legL0
+      position: {x: .0671595484, y: .000252467988, z: .143164501}
+      rotation: {x: -.0503683016, y: .9985618, z: .000926816778, w: .0183468498}
+      scale: {x: 1, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: b_legL1
+      position: {x: -.217747092, y: 0, z: 0}
+      rotation: {x: -1.15833718e-10, y: -1.16221399e-11, z: .0998334289, w: .995004177}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: b_footL
+      position: {x: -.188322544, y: -1.77323822e-09, z: 1.62124643e-08}
+      rotation: {x: -.0451680385, y: .0205404051, z: -.0490417257, w: .997563481}
+      scale: {x: .99999994, y: 1, z: .99999994}
+      transformModified: 1
+    - name: b_legR0
+      position: {x: .0671595484, y: .000253262144, z: -.143164501}
+      rotation: {x: -.0503683537, y: .9985618, z: -.000924042601, w: -.0183467921}
+      scale: {x: 1, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: b_legR1
+      position: {x: -.217747077, y: 0, z: 0}
+      rotation: {x: 6.95002333e-10, y: 6.97328376e-11, z: .0998334289, w: .995004177}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: b_footR
+      position: {x: -.188322544, y: -2.53319765e-09, z: 0}
+      rotation: {x: .0451680385, y: -.0205404926, z: -.0490417182, w: .997563481}
+      scale: {x: .99999994, y: 1, z: .99999994}
+      transformModified: 1
+    - name: body
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 1.11022302e-16, y: -0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: b_root
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: cc500c290c88fb2469203bcf10277d0e,
+    type: 3}
+  animationType: 3
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

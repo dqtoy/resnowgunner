@@ -1,0 +1,2004 @@
+fileFormatVersion: 2
+guid: 44fde54b3aaf1c748af5fb62a5d5bb7d
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: b_armL0
+    100002: b_armL1
+    100004: b_armR0
+    100006: b_armR1
+    100008: b_body
+    100010: b_head
+    100012: b_hip
+    100014: b_legL0
+    100016: b_legL1
+    100018: b_legR0
+    100020: b_legR1
+    100022: b_root
+    100024: b_sholderL
+    100026: b_sholderR
+    100028: b_weapon
+    100030: dagger
+    100032: //RootNode
+    100034: p_m_thief
+    100036: b_body1
+    100038: b_body2
+    100040: b_footL
+    100042: b_footR
+    100044: b_weaponL
+    100046: b_weaponR
+    100048: Bip001 Head
+    100050: Bip001 L Toe0
+    100052: Bip001 R Toe0
+    100054: body
+    100056: b_neck
+    400000: b_armL0
+    400002: b_armL1
+    400004: b_armR0
+    400006: b_armR1
+    400008: b_body
+    400010: b_head
+    400012: b_hip
+    400014: b_legL0
+    400016: b_legL1
+    400018: b_legR0
+    400020: b_legR1
+    400022: b_root
+    400024: b_sholderL
+    400026: b_sholderR
+    400028: b_weapon
+    400030: dagger
+    400032: p_m_thief
+    400034: //RootNode
+    400036: b_body1
+    400038: b_body2
+    400040: b_footL
+    400042: b_footR
+    400044: b_weaponL
+    400046: b_weaponR
+    400048: Bip001 Head
+    400050: Bip001 L Toe0
+    400052: Bip001 R Toe0
+    400054: body
+    400056: b_neck
+    4300000: dagger
+    4300002: p_m_thief
+    4300004: body
+    7400000: C2_idle
+    7400002: C2_ready1
+    7400004: C2_ready2
+    7400006: C2_ready3
+    7400008: C2_aiming1
+    7400010: C2_attack1
+    7400012: M2_aiming1
+    7400014: M2_casting1
+    7400016: M2_casting2
+    7400018: A2_aiming1
+    7400020: A2_aiming2
+    7400022: A2_shot1
+    7400024: C2_jump
+    7400026: C2_landing
+    7400028: C2_yes
+    7400030: C2_no
+    7400032: C2_victory
+    7400034: C2_picking
+    7400036: C2_pickup
+    7400038: C2_pickup_idle
+    7400040: C2_pickup_walk
+    7400042: C2_pickup_throw
+    7400044: C2_down
+    9500000: //RootNode
+    13700000: dagger
+    13700002: p_m_thief
+    13700004: body
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: C2_idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: C2_ready1
+      takeName: Take 001
+      firstFrame: 20
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: C2_ready2
+      takeName: Take 001
+      firstFrame: 50
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: C2_ready3
+      takeName: Take 001
+      firstFrame: 70
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: C2_aiming1
+      takeName: Take 001
+      firstFrame: 90
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: C2_attack1
+      takeName: Take 001
+      firstFrame: 100
+      lastFrame: 130
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: M2_aiming1
+      takeName: Take 001
+      firstFrame: 140
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: M2_casting1
+      takeName: Take 001
+      firstFrame: 150
+      lastFrame: 165
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: M2_casting2
+      takeName: Take 001
+      firstFrame: 165
+      lastFrame: 180
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: A2_aiming1
+      takeName: Take 001
+      firstFrame: 190
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: A2_aiming2
+      takeName: Take 001
+      firstFrame: 200
+      lastFrame: 210
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: A2_shot1
+      takeName: Take 001
+      firstFrame: 210
+      lastFrame: 230
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: C2_jump
+      takeName: Take 001
+      firstFrame: 240
+      lastFrame: 241
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: C2_landing
+      takeName: Take 001
+      firstFrame: 240
+      lastFrame: 260
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: C2_yes
+      takeName: Take 001
+      firstFrame: 260
+      lastFrame: 300
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: C2_no
+      takeName: Take 001
+      firstFrame: 300
+      lastFrame: 350
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: C2_victory
+      takeName: Take 001
+      firstFrame: 360
+      lastFrame: 410
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: C2_picking
+      takeName: Take 001
+      firstFrame: 420
+      lastFrame: 500
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: C2_pickup
+      takeName: Take 001
+      firstFrame: 500
+      lastFrame: 560
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: C2_pickup_idle
+      takeName: Take 001
+      firstFrame: 560
+      lastFrame: 580
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: C2_pickup_walk
+      takeName: Take 001
+      firstFrame: 590
+      lastFrame: 660
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: C2_pickup_throw
+      takeName: Take 001
+      firstFrame: 670
+      lastFrame: 740
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: C2_down
+      takeName: Take 001
+      firstFrame: 760
+      lastFrame: 800
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: b_root
+        weight: 1
+      - path: b_root/b_hip
+        weight: 1
+      - path: b_root/b_hip/b_body1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_head
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderL/b_armL0/b_armL1/b_weaponL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_body2/b_neck/b_sholderR/b_armR0/b_armR1/b_weaponR
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legL0/b_legL1/b_footL
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1
+        weight: 1
+      - path: b_root/b_hip/b_body1/b_legR0/b_legR1/b_footR
+        weight: 1
+      - path: body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 170
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human:
+    - boneName: b_hip
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_legL0
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_legR0
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_legL1
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_legR1
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_footL
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_footR
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_body2
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_neck
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_armL0
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_armR0
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_armL1
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_armR1
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_weaponL
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: b_weaponR
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: p_m_archer(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: b_root
+      position: {x: 0, y: .277999997, z: 0}
+      rotation: {x: -.5, y: .5, z: .5, w: .5}
+      scale: {x: .99999994, y: .99999994, z: 1}
+      transformModified: 1
+    - name: b_hip
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -.499999642, y: .500000358, z: .499999642, w: .500000358}
+      scale: {x: 1, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: b_body1
+      position: {x: -.0395057276, y: -.00011727291, z: 5.49491581e-08}
+      rotation: {x: -2.08047595e-06, y: 6.93675986e-07, z: -.000398158998, w: .99999994}
+      scale: {x: 1, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: b_body2
+      position: {x: -.147294417, y: -.000117286778, z: -3.25306698e-10}
+      rotation: {x: -3.01176727e-14, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: b_neck
+      position: {x: -.147294417, y: -.000105912462, z: -2.93758823e-10}
+      rotation: {x: -3.01176727e-14, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: b_head
+      position: {x: -.13301006, y: -3.72529022e-11, z: -1.42108544e-16}
+      rotation: {x: -7.26559993e-14, y: -1.10427334e-09, z: .000398830569, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: b_sholderL
+      position: {x: -3.81469718e-08, y: .000105879117, z: .0120234638}
+      rotation: {x: -.60876143, y: -.000243488132, z: .793353319, w: -.000315032579}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: b_armL0
+      position: {x: -.0817107558, y: -6.82121011e-15, z: -3.81469718e-08}
+      rotation: {x: .0494147055, y: .11099086, z: -.00749061676, w: .992563903}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: b_armL1
+      position: {x: -.170548022, y: 4.76837148e-09, z: 0}
+      rotation: {x: -.0012202994, y: .0121617354, z: .0378408097, w: .999209046}
+      scale: {x: 1, y: .99999994, z: 1}
+      transformModified: 1
+    - name: b_weaponL
+      position: {x: -.131949082, y: -4.76837148e-09, z: 0}
+      rotation: {x: -.706825256, y: 7.90777843e-09, z: 1.31677433e-08, w: .707388282}
+      scale: {x: 1, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: b_sholderR
+      position: {x: -3.81469718e-08, y: .000105945801, z: -.0120234638}
+      rotation: {x: .60876143, y: .000241287678, z: .793353319, w: -.000316721009}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: b_armR0
+      position: {x: -.0817107558, y: 2.2737367e-15, z: 3.81469718e-08}
+      rotation: {x: -.0494146794, y: -.110989422, z: -.00749049988, w: .992564082}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: b_armR1
+      position: {x: -.170548052, y: 0, z: 0}
+      rotation: {x: .00122025609, y: -.0121617829, z: .0378407426, w: .999209046}
+      scale: {x: .99999994, y: .99999994, z: 1}
+      transformModified: 1
+    - name: b_weaponR
+      position: {x: -.131949097, y: -2.38418574e-09, z: -3.81469718e-08}
+      rotation: {x: .706825256, y: 7.90777843e-09, z: -1.31677433e-08, w: .707388282}
+      scale: {x: 1, y: 1.00000012, z: .99999994}
+      transformModified: 1
+    - name: b_legL0
+      position: {x: .0395056158, y: .000148510575, z: .0842144117}
+      rotation: {x: -.0503682978, y: .99856174, z: .00092681672, w: .018346848}
+      scale: {x: 1, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: b_legL1
+      position: {x: -.128086522, y: 0, z: 0}
+      rotation: {x: -1.15833718e-10, y: -1.16221399e-11, z: .0998334289, w: .995004177}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: b_footL
+      position: {x: -.110777959, y: -1.04308129e-09, z: 9.53674295e-09}
+      rotation: {x: -.0451680385, y: .0205404051, z: -.0490417257, w: .997563481}
+      scale: {x: .99999994, y: 1, z: .99999994}
+      transformModified: 1
+    - name: b_legR0
+      position: {x: .0395056158, y: .000148977721, z: -.0842144117}
+      rotation: {x: -.05036835, y: .99856174, z: -.000924042542, w: -.0183467902}
+      scale: {x: 1, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: b_legR1
+      position: {x: -.128086507, y: 0, z: 0}
+      rotation: {x: 6.95002333e-10, y: 6.97328376e-11, z: .0998334289, w: .995004177}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: b_footR
+      position: {x: -.110777959, y: -1.49011603e-09, z: 0}
+      rotation: {x: .0451680385, y: -.0205404926, z: -.0490417182, w: .997563481}
+      scale: {x: .99999994, y: 1, z: .99999994}
+      transformModified: 1
+    - name: body
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 1.11022302e-16, y: -0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: b_root
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: cc500c290c88fb2469203bcf10277d0e,
+    type: 3}
+  animationType: 3
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

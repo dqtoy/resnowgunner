@@ -2,15 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-public class M_GunnerCharacterInfo{
-	public string C_Name;//0
-	public string C_NamePrefab;//1
-	public int C_Level;//2
-	public int C_Health;//3
-	public string C_Explanation;//4
-	public int C_Price;//5
-	public string C_PurchaseButton;//6
-}
+
 
 public enum GUIMode : int {Normal = 0, SetMode = 1, CharacterSelection = 2};
 	
