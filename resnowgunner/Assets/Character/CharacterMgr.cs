@@ -91,9 +91,25 @@ public class CharacterMgr : BaseMgr<CharacterMgr>
             }
         }
         //sjh ~JSON Parsing
-
+        
+        InitHasCharacter();
         Init();
     }
+
+    void InitHasCharacter()
+    {
+        if (m_dicTemplateData.Count == 0)
+            return;
+
+        Dictionary<string, CharacterTemplateData>.Enumerator enumerator = m_dicTemplateData.GetEnumerator();
+
+        while(enumerator.MoveNext())
+        {
+            if(m_listHasCharacter.Contains(enumerator.Current.Value.KEY)==false)
+                m_listHasCharacter.Add(enumerator.Current.Value.KEY);   
+        }
+    }
+
     void Init()
     {
         // 소지 케릭터 정보
@@ -106,8 +122,7 @@ public class CharacterMgr : BaseMgr<CharacterMgr>
             AddCharacter(hasCharEnumerator.Current);
         }
     }
-
-
+    
     public GameCharacter AddCharacter(string strTemplateKey)
     {
         CharacterTemplateData templateData = GetTemplate(strTemplateKey);
