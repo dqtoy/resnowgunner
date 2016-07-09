@@ -91,8 +91,10 @@ public class CharacterMgr : BaseMgr<CharacterMgr>
             }
         }
         //sjh ~JSON Parsing
-        
+        //sjh InitHasCharacter
+		//min Start 함수가 먼저 호출되고 m_listHasCharacter[가지고 있는 캐릭터]의 목록이 생기게끔 임시 해결책.
         InitHasCharacter();
+        //InitGameCharacter();
         Init();
     }
 
@@ -232,4 +234,12 @@ public class CharacterMgr : BaseMgr<CharacterMgr>
         return m_dicFactorInfo;
     }
     //sjh Selecting Character Info
+    
+    // 초기화하기 위해 호출해주는 함수
+    public void SetUp()
+    {
+        
+        
+    }
+    // min
 }

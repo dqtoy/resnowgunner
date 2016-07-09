@@ -93,6 +93,9 @@ public class UI_FriendsLobbyForm : UIFormObject {
         GameObject parent = CharacterView_2.transform.FindChild("Background").gameObject;
         //CharacterView_2
         int indexer = 0;
+		// min m_listHasCharacter가 목록이 생기게끔 Start 함수 실행되고 나서...
+		// GAME_CHARACTER가 아닌 SELECTING_CHARACTER에서 목록을 생성하게 코드 변경 예정
+        CharacterMgr.Instance.SetUp();
         foreach (KeyValuePair<string, GameCharacter> Gunner in CharacterMgr.Instance.GAME_CHARACTER)
         {
             GameObject charteritem = NGUITools.AddChild(m_SelectGrid.SelfObject, CharacterPrefab);
