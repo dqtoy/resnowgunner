@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public sealed class CharacterFactorTable
 {
-    Dictionary<string, FactorTable> m_dicFactor = new Dictionary<string, FactorTable>();
+    Dictionary<eCharacterKey, FactorTable> m_dicFactor = new Dictionary<eCharacterKey, FactorTable>();
 
     // 모든 수치가 합쳐진 totalfactor
 
@@ -13,17 +13,15 @@ public sealed class CharacterFactorTable
     //totalFactor 갱신용
     bool m_bRefresh = false;
     
-    // strKey 는 임의이 key값... 아이템이름.. 종류 케릭터 등등 다양
-    public void AddFactorTable(string strKey, FactorTable factorTable)
+    public void AddFactorTable(eCharacterKey theCharacterKey, FactorTable factorTable)
     {
-        m_dicFactor.Remove(strKey);
-        m_dicFactor.Add(strKey, factorTable);
+        m_dicFactor.Remove(theCharacterKey);
+        m_dicFactor.Add(theCharacterKey, factorTable);
         m_bRefresh = true;
     }
-
-    public void RemoveFactorTable(string strKey)
+    public void RemoveFactorTable(eCharacterKey theCharacterKey)
     {
-        m_dicFactor.Remove(strKey);
+        m_dicFactor.Remove(theCharacterKey);
         m_bRefresh = true;
     }
 
@@ -42,7 +40,7 @@ public sealed class CharacterFactorTable
         m_totalFactor.InitData();
 
         // 대입
-        foreach (KeyValuePair<string, FactorTable> keyValue in m_dicFactor)
+        foreach (KeyValuePair<eCharacterKey, FactorTable> keyValue in m_dicFactor)
         {
             FactorTable table = keyValue.Value;
             m_totalFactor.Copy(table);

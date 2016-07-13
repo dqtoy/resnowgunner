@@ -2,13 +2,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+
+public enum eCharacterKey
+{
+    CHARACTER_KEY_NONE, // 0
+    CHARACTER_1,        // 1
+    CHARACTER_2,        // 2
+    CHARACTER_JOHN,     // 3
+    CHARACTER_MARTIN,   // 4
+    CHARACTER_RICHARD,  // 5
+    CHARACTER_ROBERT,   // 6
+    CHARACTER_CATHERINE,// 7
+    CHARACTER_COUNT,
+}
 public enum eCharacterType
 {
-    CHARACTER_TYPE_NONE,
-    CHARACTER_TYPE_MAIN,
-    CHARACTER_TYPE_ASSIST,
-    CHARACTER_TYPE_FRIEND,
-    CHARACTER_TYPE_ENEMY,
+    CHARACTER_TYPE_NONE,  // 0
+    CHARACTER_TYPE_MAIN,  // 1
+    CHARACTER_TYPE_ASSIST,// 2
+    CHARACTER_TYPE_FRIEND,// 3
+    CHARACTER_TYPE_ENEMY, // 4
     CHARACTER_TYPE_COUNT,
 }
 public enum eRaceType
@@ -18,31 +31,21 @@ public enum eRaceType
     RACE_TYPE_ELF,
     RACE_TYPE_WORGEN,
 }
-public enum eCharacterKey
-{
-    CHARACTER_KEY_NONE,
-    CHARACTER_1,
-    CHARACTER_2,
-    CHARACTER_JOHN,
-    CHARACTER_MARTIN,
-    CHARACTER_RICHARD,
-    CHARACTER_ROBERT,
-    CHARACTER_CATHERINE,
-    CHARACTER_COUNT,
-}
+
 public class CharacterTemplateData
 {
-    // m_FactorTable에 Json으로 기본 수치를 받아놓을것 임
-    //TYPE
-    eCharacterType m_CharacterType = eCharacterType.CHARACTER_TYPE_NONE;
-    //KEY
+    string m_strKey = string.Empty;
+
+    public string KEY
+    {
+        get { return m_strKey; }
+    }
+
+    //KEY eCharacterKey
     eCharacterKey m_CharacterKey = eCharacterKey.CHARACTER_KEY_NONE;
-    //RACE
-    eRaceType m_RaceType = eRaceType.RACE_TYPE_NONE;
-
-    // m_FactorTable에 Json으로 기본 수치를 받아놓을것임 
-    FactorTable m_FactorTable = new FactorTable();
-
+    //TYPE 캐릭터 타입 CHARACTER_TYPE_MAIN 1
+    eCharacterType m_CharacterType = eCharacterType.CHARACTER_TYPE_NONE;
+    
     public eCharacterType CHARACTER_TYPE
     {
         get { return m_CharacterType; }
@@ -51,30 +54,35 @@ public class CharacterTemplateData
     {
         get { return m_CharacterKey; }
     }
-    public eRaceType RACE_TYPE
-    {
-        get { return m_RaceType; }
-    }
 
-    string m_strKey   = string.Empty;
+    // m_FactorTable에 Json으로 기본 수치를 받아놓을것임 
+    FactorTable m_FactorTable = new FactorTable();
+    public FactorTable FACTOR_TABLE { get { return m_FactorTable; } }
+    LevelTable m_LevelTable = new LevelTable();
     string m_strName  = string.Empty;
     string m_strPrefabName = string.Empty;
-    public string KEY
-    {
-        get { return m_strKey; }
-    }
+
     public string NAME
     {
         get { return m_strName; }
     }
     public string PREFAB_NAME
     {
-        get { return m_strPrefabName;  }
+        get { return m_strPrefabName; }
     }
+
+    //RACE eRaceType RACE_TYPE_HUMAN
+    eRaceType m_RaceType = eRaceType.RACE_TYPE_NONE;
+    public eRaceType RACE_TYPE
+    {
+        get { return m_RaceType; }
+    }
+    /*
     int   m_nHealth   = 0;
     float m_fDaySpd   = 0.0f;
     float m_fNightSpd = 0.0f;
-
+    */
+    /*
     public int HEALTH
     {
         get { return m_nHealth;  }
@@ -89,7 +97,7 @@ public class CharacterTemplateData
     {
         get { return m_fNightSpd; }
     }
-
+    */
     int m_nRequiredLv  = 0;
     bool m_bPurchasing = false;
 
@@ -103,6 +111,7 @@ public class CharacterTemplateData
         get { return m_bPurchasing; }
         set { m_bPurchasing = value; }
     }
+
     string m_strHobby    = string.Empty;
     int m_nRequiredPrice = 0;
 
@@ -115,22 +124,23 @@ public class CharacterTemplateData
         get { return m_nRequiredPrice; }
     }
 
-    public FactorTable FACTOR_TABLE { get { return m_FactorTable; } }
-
     List<string> m_listExtraClass = new List<string>();
     List<float> m_flistExtraClassParam = new List<float>();
     
     public List<string> LIST_EXTRA_CLASS { get { return m_listExtraClass; } }
     public List<float> LIST_EXTRA_CLASS_PARAM_F { get { return m_flistExtraClassParam; } }
 
-
-
     public CharacterTemplateData(string strkey, SimpleJSON.JSONNode nodeData)
     {
         m_strKey = strkey;
 
-        //"CHARACTER_TYPE": 1
-        //"NAME": "캐릭터1"
+        //"CHARACTER_TYPE": 1, CHARACTER_TYPE_MAIN
+        //"CHARACTER_KEY" : CHARACTER_1
+        //"NAME"          : "명랑한 헨리군"
+
+        m_CharacterKey = (eCharacterKey)Enum.Parse(typeof(eCharacterKey), strkey.ToString(), true);
+        m_CharacterType = (eCharacterType)(nodeData["CHARACTER_TYPE"].AsInt);
+
         for (int i = 0; i < (int)eFactorData.COUNT; ++i)
         {
             eFactorData factorData = (eFactorData)i;
@@ -138,20 +148,19 @@ public class CharacterTemplateData
             if (valueData > 0)
                 m_FactorTable.IncreaseData(factorData, valueData);
         }
-        m_CharacterType = (eCharacterType)(nodeData["CHARACTER_TYPE"].AsInt);
-        m_CharacterKey = (eCharacterKey)Enum.Parse(typeof(eCharacterKey), strkey.ToString(), true);
+
         m_strName = nodeData["NAME"];
         m_strPrefabName = nodeData["PREFAB_NAME"];
 
         FindRace(nodeData["RACE"].Value);
 
-        m_nHealth   = nodeData["HEALTH"].AsInt;
-        m_fDaySpd   = nodeData["DAY_SPEED"].AsFloat;
-        m_fNightSpd = nodeData["NIGHT_SPEED"].AsFloat;
+        //m_nHealth   = nodeData["HEALTH"].AsInt;
+        //m_fDaySpd   = nodeData["DAY_SPEED"].AsFloat;
+        //m_fNightSpd = nodeData["NIGHT_SPEED"].AsFloat;
         //PLUS_EXP
         SimpleJSON.JSONArray arrExtraClass = nodeData["EXTRA"].AsArray;
         SimpleJSON.JSONArray arrExtraClassParam = nodeData["EXTRA_PARAM"].AsArray;
-
+        // 구매가능레벨 ↓
         m_nRequiredLv    = nodeData["LEVEL"].AsInt;
         m_bPurchasing    = nodeData["PURCHASING"] == "Y" ? true : false;
 

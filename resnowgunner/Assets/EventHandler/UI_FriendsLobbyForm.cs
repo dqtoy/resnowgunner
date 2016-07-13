@@ -130,7 +130,7 @@ public class UI_FriendsLobbyForm : UIFormObject {
             Level.text = "L " + Gunner.Value.CHARACTER_TEMPLATE.REQUIRED_LEVEL;
 
             UILabel Health = charteritem.transform.FindChild("HealthBar/Label").GetComponent<UILabel>();
-            Health.text = Gunner.Value.CHARACTER_TEMPLATE.HEALTH.ToString();
+            Health.text = Gunner.Value.CHARACTER_TEMPLATE.FACTOR_TABLE.GetFactorData(eFactorData.HEALTH).ToString();
             //Explanation
             UILabel Explanation = charteritem.transform.FindChild("Skill/Label").GetComponent<UILabel>();
             Explanation.text = Gunner.Value.CHARACTER_TEMPLATE.HOBBY.ToString();

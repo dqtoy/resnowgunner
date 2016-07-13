@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 public enum eFactorData
 {
-    MAX_HP,
-
+    HEALTH,
+    DAY_SPEED,
+    NIGHT_SPEED,
     COUNT,
 }
-
 public sealed class FactorTable {
     Dictionary<eFactorData, double> m_dicData = new Dictionary<eFactorData, double>();
 

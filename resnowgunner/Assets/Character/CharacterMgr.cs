@@ -29,6 +29,7 @@ public struct CharacterFactorInfo
     public int RequiredPrice;
     public string hobby;
     public FactorTable factorTable;
+    public LevelTable levelTable;
    // public
 }
 public class CharacterMgr : BaseMgr<CharacterMgr>
@@ -200,9 +201,10 @@ public class CharacterMgr : BaseMgr<CharacterMgr>
                 stFactorInfo.Key = selectingGameCharacter.CHARACTER_TEMPLATE.KEY;
                 stFactorInfo.Name = selectingGameCharacter.CHARACTER_TEMPLATE.NAME;
                 stFactorInfo.PrefabName = selectingGameCharacter.CHARACTER_TEMPLATE.PREFAB_NAME;
-                stFactorInfo.Health = selectingGameCharacter.CHARACTER_TEMPLATE.HEALTH;
-                stFactorInfo.DaySpd = selectingGameCharacter.CHARACTER_TEMPLATE.DAYSPD;
-                stFactorInfo.NightSpd = selectingGameCharacter.CHARACTER_TEMPLATE.NIGHTSPD;
+                //stFactorInfo.Health = selectingGameCharacter.CHARACTER_TEMPLATE.HEALTH;
+                //stFactorInfo.DaySpd = selectingGameCharacter.CHARACTER_TEMPLATE.DAYSPD;
+                //stFactorInfo.NightSpd = selectingGameCharacter.CHARACTER_TEMPLATE.NIGHTSPD;
+                stFactorInfo.factorTable = selectingGameCharacter.CHARACTER_TEMPLATE.FACTOR_TABLE;
                 stFactorInfo.RequiredLv = selectingGameCharacter.CHARACTER_TEMPLATE.REQUIRED_LEVEL;
                 stFactorInfo.IsPurchasing = selectingGameCharacter.CHARACTER_TEMPLATE.IS_PURCHASING;
                 stFactorInfo.RequiredPrice = selectingGameCharacter.CHARACTER_TEMPLATE.REQUIRED_PRICE;
