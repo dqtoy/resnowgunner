@@ -7,6 +7,7 @@ public enum eLevelData
 {
     LEVEL,
     EXP,
+    DIFF,
     COUNT
 }
 public sealed class LevelTable {

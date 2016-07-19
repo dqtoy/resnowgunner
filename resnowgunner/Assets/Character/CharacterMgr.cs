@@ -29,8 +29,6 @@ public struct CharacterFactorInfo
     public int RequiredPrice;
     public string hobby;
     public FactorTable factorTable;
-    public LevelTable levelTable;
-   // public
 }
 public class CharacterMgr : BaseMgr<CharacterMgr>
 {

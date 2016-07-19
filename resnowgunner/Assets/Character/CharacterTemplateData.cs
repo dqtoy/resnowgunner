@@ -58,7 +58,7 @@ public class CharacterTemplateData
     // m_FactorTable에 Json으로 기본 수치를 받아놓을것임 
     FactorTable m_FactorTable = new FactorTable();
     public FactorTable FACTOR_TABLE { get { return m_FactorTable; } }
-    LevelTable m_LevelTable = new LevelTable();
+    
     string m_strName  = string.Empty;
     string m_strPrefabName = string.Empty;
 
