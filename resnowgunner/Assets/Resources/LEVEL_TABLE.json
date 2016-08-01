@@ -1,104 +1,716 @@
 {
-	"LEVEL_TABLE": {
-		"1": {
+	"CHARACTER_1": [
+		{
 			"LEVEL": 1,
 			"EXP": 15,
 			"DIFF": 15
 		},
-		"2": {
+		{
 			"LEVEL": 2,
 			"EXP": 45,
 			"DIFF": 30
 		},
-		"3": {
+		{
 			"LEVEL": 3,
 			"EXP": 95,
 			"DIFF": 50
 		},
-		"4": {
+		{
 			"LEVEL": 4,
 			"EXP": 165,
 			"DIFF": 70
 		},
-		"5": {
+		{
 			"LEVEL": 5,
 			"EXP": 255,
 			"DIFF": 90
 		},
-		"6": {
+		{
 			"LEVEL": 6,
 			"EXP": 365,
 			"DIFF": 110
 		},
-		"7": {
+		{
 			"LEVEL": 7,
 			"EXP": 495,
 			"DIFF": 130
 		},
-		"8": {
+		{
 			"LEVEL": 8,
 			"EXP": 645,
 			"DIFF": 150
 		},
-		"9": {
+		{
 			"LEVEL": 9,
 			"EXP": 815,
 			"DIFF": 170
 		},
-		"10": {
+		{
 			"LEVEL": 10,
 			"EXP": 1005,
 			"DIFF": 190
 		},
-		"11": {
+		{
 			"LEVEL": 11,
 			"EXP": 1215,
 			"DIFF": 210
 		},
-		"12": {
+		{
 			"LEVEL": 12,
 			"EXP": 1445,
 			"DIFF": 230
 		},
-		"13": {
+		{
 			"LEVEL": 13,
 			"EXP": 1695,
-			"DIFF": 270
+			"DIFF": 250
 		},
-		"14": {
+		{
 			"LEVEL": 14,
 			"EXP": 1965,
 			"DIFF": 270
 		},
-		"15": {
+		{
 			"LEVEL": 15,
 			"EXP": 2255,
 			"DIFF": 290
 		},
-		"16": {
+		{
 			"LEVEL": 16,
 			"EXP": 2565,
 			"DIFF": 310
 		},
-		"17": {
+		{
 			"LEVEL": 17,
 			"EXP": 2895,
 			"DIFF": 330
 		},
-		"18": {
+		{
 			"LEVEL": 18,
 			"EXP": 3245,
 			"DIFF": 350
 		},
-		"19": {
+		{
 			"LEVEL": 19,
 			"EXP": 3615,
 			"DIFF": 370
 		},
-		"20": {
+		{
 			"LEVEL": 20,
 			"EXP": 4005,
 			"DIFF": 390
 		}
-	}
+	],
+	"CHARACTER_2": [
+		{
+			"LEVEL": 1,
+			"EXP": 20,
+			"DIFF": 20
+		},
+		{
+			"LEVEL": 2,
+			"EXP": 45,
+			"DIFF": 25
+		},
+		{
+			"LEVEL": 3,
+			"EXP": 75,
+			"DIFF": 30
+		},
+		{
+			"LEVEL": 4,
+			"EXP": 110,
+			"DIFF": 35
+		},
+		{
+			"LEVEL": 5,
+			"EXP": 150,
+			"DIFF": 40
+		},
+		{
+			"LEVEL": 6,
+			"EXP": 195,
+			"DIFF": 45
+		},
+		{
+			"LEVEL": 7,
+			"EXP": 250,
+			"DIFF": 55
+		},
+		{
+			"LEVEL": 8,
+			"EXP": 310,
+			"DIFF": 60
+		},
+		{
+			"LEVEL": 9,
+			"EXP": 375,
+			"DIFF": 65
+		},
+		{
+			"LEVEL": 10,
+			"EXP": 445,
+			"DIFF": 70
+		},
+		{
+			"LEVEL": 11,
+			"EXP": 520,
+			"DIFF": 75
+		},
+		{
+			"LEVEL": 12,
+			"EXP": 600,
+			"DIFF": 80
+		},
+		{
+			"LEVEL": 13,
+			"EXP": 685,
+			"DIFF": 85
+		},
+		{
+			"LEVEL": 14,
+			"EXP": 775,
+			"DIFF": 90
+		},
+		{
+			"LEVEL": 15,
+			"EXP": 870,
+			"DIFF": 95
+		},
+		{
+			"LEVEL": 16,
+			"EXP": 970,
+			"DIFF": 100
+		},
+		{
+			"LEVEL": 17,
+			"EXP": 1075,
+			"DIFF": 105
+		},
+		{
+			"LEVEL": 18,
+			"EXP": 1185,
+			"DIFF": 110
+		},
+		{
+			"LEVEL": 19,
+			"EXP": 1300,
+			"DIFF": 115
+		},
+		{
+			"LEVEL": 20,
+			"EXP": 1420,
+			"DIFF": 120
+		}
+	],
+	"CHARACTER_JOHN": [
+		{
+			"LEVEL": 1,
+			"EXP": 15,
+			"DIFF": 15
+		},
+		{
+			"LEVEL": 2,
+			"EXP": 45,
+			"DIFF": 30
+		},
+		{
+			"LEVEL": 3,
+			"EXP": 95,
+			"DIFF": 50
+		},
+		{
+			"LEVEL": 4,
+			"EXP": 165,
+			"DIFF": 70
+		},
+		{
+			"LEVEL": 5,
+			"EXP": 255,
+			"DIFF": 90
+		},
+		{
+			"LEVEL": 6,
+			"EXP": 365,
+			"DIFF": 110
+		},
+		{
+			"LEVEL": 7,
+			"EXP": 495,
+			"DIFF": 130
+		},
+		{
+			"LEVEL": 8,
+			"EXP": 645,
+			"DIFF": 150
+		},
+		{
+			"LEVEL": 9,
+			"EXP": 815,
+			"DIFF": 170
+		},
+		{
+			"LEVEL": 10,
+			"EXP": 1005,
+			"DIFF": 190
+		},
+		{
+			"LEVEL": 11,
+			"EXP": 1215,
+			"DIFF": 210
+		},
+		{
+			"LEVEL": 12,
+			"EXP": 1445,
+			"DIFF": 230
+		},
+		{
+			"LEVEL": 13,
+			"EXP": 1695,
+			"DIFF": 250
+		},
+		{
+			"LEVEL": 14,
+			"EXP": 1965,
+			"DIFF": 270
+		},
+		{
+			"LEVEL": 15,
+			"EXP": 2255,
+			"DIFF": 290
+		},
+		{
+			"LEVEL": 16,
+			"EXP": 2565,
+			"DIFF": 310
+		},
+		{
+			"LEVEL": 17,
+			"EXP": 2895,
+			"DIFF": 330
+		},
+		{
+			"LEVEL": 18,
+			"EXP": 3245,
+			"DIFF": 350
+		},
+		{
+			"LEVEL": 19,
+			"EXP": 3615,
+			"DIFF": 370
+		},
+		{
+			"LEVEL": 20,
+			"EXP": 4005,
+			"DIFF": 390
+		}
+	],
+	"CHARACTER_MARTIN": [
+		{
+			"LEVEL": 1,
+			"EXP": 15,
+			"DIFF": 15
+		},
+		{
+			"LEVEL": 2,
+			"EXP": 45,
+			"DIFF": 30
+		},
+		{
+			"LEVEL": 3,
+			"EXP": 95,
+			"DIFF": 50
+		},
+		{
+			"LEVEL": 4,
+			"EXP": 165,
+			"DIFF": 70
+		},
+		{
+			"LEVEL": 5,
+			"EXP": 255,
+			"DIFF": 90
+		},
+		{
+			"LEVEL": 6,
+			"EXP": 365,
+			"DIFF": 110
+		},
+		{
+			"LEVEL": 7,
+			"EXP": 495,
+			"DIFF": 130
+		},
+		{
+			"LEVEL": 8,
+			"EXP": 645,
+			"DIFF": 150
+		},
+		{
+			"LEVEL": 9,
+			"EXP": 815,
+			"DIFF": 170
+		},
+		{
+			"LEVEL": 10,
+			"EXP": 1005,
+			"DIFF": 190
+		},
+		{
+			"LEVEL": 11,
+			"EXP": 1215,
+			"DIFF": 210
+		},
+		{
+			"LEVEL": 12,
+			"EXP": 1445,
+			"DIFF": 230
+		},
+		{
+			"LEVEL": 13,
+			"EXP": 1695,
+			"DIFF": 250
+		},
+		{
+			"LEVEL": 14,
+			"EXP": 1965,
+			"DIFF": 270
+		},
+		{
+			"LEVEL": 15,
+			"EXP": 2255,
+			"DIFF": 290
+		},
+		{
+			"LEVEL": 16,
+			"EXP": 2565,
+			"DIFF": 310
+		},
+		{
+			"LEVEL": 17,
+			"EXP": 2895,
+			"DIFF": 330
+		},
+		{
+			"LEVEL": 18,
+			"EXP": 3245,
+			"DIFF": 350
+		},
+		{
+			"LEVEL": 19,
+			"EXP": 3615,
+			"DIFF": 370
+		},
+		{
+			"LEVEL": 20,
+			"EXP": 4005,
+			"DIFF": 390
+		}
+	],
+	"CHARACTER_RICHARD": [
+		{
+			"LEVEL": 1,
+			"EXP": 5,
+			"DIFF": 5
+		},
+		{
+			"LEVEL": 2,
+			"EXP": 30,
+			"DIFF": 25
+		},
+		{
+			"LEVEL": 3,
+			"EXP": 75,
+			"DIFF": 45
+		},
+		{
+			"LEVEL": 4,
+			"EXP": 140,
+			"DIFF": 65
+		},
+		{
+			"LEVEL": 5,
+			"EXP": 225,
+			"DIFF": 85
+		},
+		{
+			"LEVEL": 6,
+			"EXP": 330,
+			"DIFF": 105
+		},
+		{
+			"LEVEL": 7,
+			"EXP": 455,
+			"DIFF": 125
+		},
+		{
+			"LEVEL": 8,
+			"EXP": 600,
+			"DIFF": 145
+		},
+		{
+			"LEVEL": 9,
+			"EXP": 765,
+			"DIFF": 165
+		},
+		{
+			"LEVEL": 10,
+			"EXP": 950,
+			"DIFF": 185
+		},
+		{
+			"LEVEL": 11,
+			"EXP": 1155,
+			"DIFF": 205
+		},
+		{
+			"LEVEL": 12,
+			"EXP": 1380,
+			"DIFF": 225
+		},
+		{
+			"LEVEL": 13,
+			"EXP": 1625,
+			"DIFF": 245
+		},
+		{
+			"LEVEL": 14,
+			"EXP": 1890,
+			"DIFF": 265
+		},
+		{
+			"LEVEL": 15,
+			"EXP": 2175,
+			"DIFF": 285
+		},
+		{
+			"LEVEL": 16,
+			"EXP": 2480,
+			"DIFF": 305
+		},
+		{
+			"LEVEL": 17,
+			"EXP": 2805,
+			"DIFF": 325
+		},
+		{
+			"LEVEL": 18,
+			"EXP": 3150,
+			"DIFF": 345
+		},
+		{
+			"LEVEL": 19,
+			"EXP": 3515,
+			"DIFF": 365
+		},
+		{
+			"LEVEL": 20,
+			"EXP": 3900,
+			"DIFF": 385
+		}
+	],
+	"CHARACTER_ROBERT": [
+		{
+			"LEVEL": 1,
+			"EXP": 6,
+			"DIFF": 6
+		},
+		{
+			"LEVEL": 2,
+			"EXP": 20,
+			"DIFF": 14
+		},
+		{
+			"LEVEL": 3,
+			"EXP": 44,
+			"DIFF": 24
+		},
+		{
+			"LEVEL": 4,
+			"EXP": 80,
+			"DIFF": 36
+		},
+		{
+			"LEVEL": 5,
+			"EXP": 130,
+			"DIFF": 50
+		},
+		{
+			"LEVEL": 6,
+			"EXP": 196,
+			"DIFF": 66
+		},
+		{
+			"LEVEL": 7,
+			"EXP": 280,
+			"DIFF": 84
+		},
+		{
+			"LEVEL": 8,
+			"EXP": 384,
+			"DIFF": 104
+		},
+		{
+			"LEVEL": 9,
+			"EXP": 510,
+			"DIFF": 126
+		},
+		{
+			"LEVEL": 10,
+			"EXP": 660,
+			"DIFF": 150
+		},
+		{
+			"LEVEL": 11,
+			"EXP": 836,
+			"DIFF": 176
+		},
+		{
+			"LEVEL": 12,
+			"EXP": 1040,
+			"DIFF": 204
+		},
+		{
+			"LEVEL": 13,
+			"EXP": 1274,
+			"DIFF": 234
+		},
+		{
+			"LEVEL": 14,
+			"EXP": 1540,
+			"DIFF": 266
+		},
+		{
+			"LEVEL": 15,
+			"EXP": 1840,
+			"DIFF": 300
+		},
+		{
+			"LEVEL": 16,
+			"EXP": 2176,
+			"DIFF": 336
+		},
+		{
+			"LEVEL": 17,
+			"EXP": 2550,
+			"DIFF": 374
+		},
+		{
+			"LEVEL": 18,
+			"EXP": 2964,
+			"DIFF": 414
+		},
+		{
+			"LEVEL": 19,
+			"EXP": 3420,
+			"DIFF": 456
+		},
+		{
+			"LEVEL": 20,
+			"EXP": 3920,
+			"DIFF": 500
+		}
+	],
+	"CHARACTER_CATHERINE": [
+		{
+			"LEVEL": 1,
+			"EXP": 4,
+			"DIFF": 4
+		},
+		{
+			"LEVEL": 2,
+			"EXP": 18,
+			"DIFF": 14
+		},
+		{
+			"LEVEL": 3,
+			"EXP": 42,
+			"DIFF": 24
+		},
+		{
+			"LEVEL": 4,
+			"EXP": 76,
+			"DIFF": 34
+		},
+		{
+			"LEVEL": 5,
+			"EXP": 120,
+			"DIFF": 44
+		},
+		{
+			"LEVEL": 6,
+			"EXP": 174,
+			"DIFF": 54
+		},
+		{
+			"LEVEL": 7,
+			"EXP": 238,
+			"DIFF": 64
+		},
+		{
+			"LEVEL": 8,
+			"EXP": 312,
+			"DIFF": 74
+		},
+		{
+			"LEVEL": 9,
+			"EXP": 396,
+			"DIFF": 84
+		},
+		{
+			"LEVEL": 10,
+			"EXP": 490,
+			"DIFF": 94
+		},
+		{
+			"LEVEL": 11,
+			"EXP": 594,
+			"DIFF": 104
+		},
+		{
+			"LEVEL": 12,
+			"EXP": 708,
+			"DIFF": 114
+		},
+		{
+			"LEVEL": 13,
+			"EXP": 832,
+			"DIFF": 124
+		},
+		{
+			"LEVEL": 14,
+			"EXP": 966,
+			"DIFF": 134
+		},
+		{
+			"LEVEL": 15,
+			"EXP": 1110,
+			"DIFF": 144
+		},
+		{
+			"LEVEL": 16,
+			"EXP": 1264,
+			"DIFF": 154
+		},
+		{
+			"LEVEL": 17,
+			"EXP": 1428,
+			"DIFF": 164
+		},
+		{
+			"LEVEL": 18,
+			"EXP": 1602,
+			"DIFF": 174
+		},
+		{
+			"LEVEL": 19,
+			"EXP": 1786,
+			"DIFF": 184
+		},
+		{
+			"LEVEL": 20,
+			"EXP": 1980,
+			"DIFF": 194
+		}
+	]
 }
