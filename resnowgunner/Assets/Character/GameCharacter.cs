@@ -21,6 +21,8 @@ public class GameCharacter : BaseObject {
         set;
     }*/
 
+    private LevelGrowMgr growMgr= null;
+
     public CharacterFactorTable CHARACTER_FACTOR { get { return m_CharacterFactorTable; } }
     public CharacterTemplateData CHARACTER_TEMPLATE { get { return m_TemplateData; } }
     public LevelGrowTable LEVEL_TEMPLATE { get { return m_LevelTable; } }
@@ -36,7 +38,7 @@ public class GameCharacter : BaseObject {
         m_DaySpd = CHARACTER_FACTOR.GetFactorData(eFactorData.DAY_SPEED);
         m_NightSpd = CHARACTER_FACTOR.GetFactorData(eFactorData.NIGHT_SPEED);
         //Error1
-        //m_LevelTable = LevelGrowMgr.Instance.LEVEL_GROW_TABLE;
+        growMgr = LevelGrowMgr.Instance;
     }
 
     public void IncreaseCurrentHP(double valueData)

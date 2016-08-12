@@ -24,6 +24,15 @@ public class LevelGrowMgr : BaseMgr<LevelGrowMgr> {
             {
                 // 키에 따라 값을 재할당하고 싶다.
                 JSONArray CharacterExpData_Character_1 = CharacterGrowDataNode["CHARACTER_1"] as JSONArray;
+                
+
+                foreach (KeyValuePair<string,JSONNode> keyValue in CharacterGrowDataNode)
+                {
+                    Debug.Log(keyValue);
+                }
+
+
+
                 foreach (KeyValuePair<string, JSONNode> keyValue in CharacterExpData_Character_1)
                 {
                     LevelGrowTemplate _Character_1Temp = new LevelGrowTemplate(keyValue.Key);
