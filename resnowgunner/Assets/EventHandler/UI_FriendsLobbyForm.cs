@@ -16,7 +16,8 @@ public class M_GunnerCharacterInfo
     public int C_Price;//5
     public string C_PurchaseButton;//6
 }
-public class UI_FriendsLobbyForm : UIFormObject {
+public class UI_FriendsLobbyForm : UIFormObject
+{
 
     [SerializeField]
     UIGridObject m_SelectGrid;
@@ -47,6 +48,8 @@ public class UI_FriendsLobbyForm : UIFormObject {
     int lastWidth;
     int lastHeight;
     bool stay = true;
+    // 2016년 7월 26일 TeamControlMode의 m_dicTeamCharacterFactorInfo 멤버변수를 가져옴
+    Dictionary<string, CharacterFactorInfo> m_dicHasCharacterFactorInfo = null;
     void Start()
     {
         VersionLabel = m_SettingMenu.SelfTransform.FindChild("Version Label").GetComponent<UILabel>();
@@ -95,12 +98,14 @@ public class UI_FriendsLobbyForm : UIFormObject {
         int indexer = 0;
         // min m_listHasCharacter가 목록이 생기게끔 Start 함수 실행되고 나서...
         // GAME_CHARACTER가 아닌 SELECTING_CHARACTER에서 목록을 생성하게 코드 변경 예정
-        CharacterMgr.Instance.SetUp();
-        LevelMgr.Instance.LevelSetUp();
+
+        Charic_Preview_Info(eCharacterType.CHARACTER_TYPE_MAIN);
+        CharacterMgr.Instance.MakeUI();
+
         foreach (KeyValuePair<string, GameCharacter> Gunner in CharacterMgr.Instance.GAME_CHARACTER)
         {
             GameObject charteritem = NGUITools.AddChild(m_SelectGrid.SelfObject, CharacterPrefab);
-            GameObject GunnerPrefab = Resources.Load("Character/"+Gunner.Value.CHARACTER_TEMPLATE.PREFAB_NAME) as GameObject;
+            GameObject GunnerPrefab = Resources.Load("Character/" + Gunner.Value.CHARACTER_TEMPLATE.PREFAB_NAME) as GameObject;
             GameObject go = GameObject.Instantiate(GunnerPrefab) as GameObject;
             if (go != null && parent != null)
             {
@@ -114,14 +119,14 @@ public class UI_FriendsLobbyForm : UIFormObject {
                 go.name = Gunner.Value.CHARACTER_TEMPLATE.NAME.ToString();
             }
 
-            
+
 
             UILabel Name = charteritem.transform.FindChild("Name").GetComponent<UILabel>();
             Name.text = Gunner.Value.CHARACTER_TEMPLATE.NAME;
             //NGUITools.AdjustDepth (charteritem.transform.FindChild("Gunner").gameObject, 1);
 
             // Min-Goo, 2016년 3월 30일 추가된 코드
-            
+
 
 
             //Renderer mat = go.transform.FindChild("HeroBase_01").FindChild("HeroBase_mesh").GetComponent<Renderer>();
@@ -131,7 +136,7 @@ public class UI_FriendsLobbyForm : UIFormObject {
             Level.text = "L " + Gunner.Value.CHARACTER_TEMPLATE.REQUIRED_LEVEL;
 
             UILabel Health = charteritem.transform.FindChild("HealthBar/Label").GetComponent<UILabel>();
-            Health.text = Gunner.Value.CHARACTER_TEMPLATE.FACTOR_TABLE.GetFactorData(eFactorData.HEALTH).ToString();
+            Health.text = Gunner.Value.CHARACTER_TEMPLATE.FACTOR_TABLE.GetData(eFactorData.HEALTH).ToString();
             //Explanation
             UILabel Explanation = charteritem.transform.FindChild("Skill/Label").GetComponent<UILabel>();
             Explanation.text = Gunner.Value.CHARACTER_TEMPLATE.HOBBY.ToString();
@@ -172,6 +177,68 @@ public class UI_FriendsLobbyForm : UIFormObject {
         return mat;
 
     }
+    public void OnPreviewCharacterInfo()
+    {
+        Charic_Preview_Info(eCharacterType.CHARACTER_TYPE_MAIN);
+    }
+    //sjh 아군 소지 Main Character 목록을 불러온다. 
+    //
+    List<string> listHasCharacter = null;
+    void Charic_Preview_Info(eCharacterType _CharacterType)
+    {
+        //m_dicHasCharacterFactorInfo = CharacterMgr.Instance.MakeUIInfo();
+        //PrevListDelete(m_SelectGrid);
+
+        //listHasCharacter = CharacterMgr.Instance.HAS_CHARACTER;
+        //List<string>.Enumerator hasCharacter_enumerator = listHasCharacter.GetEnumerator();
+
+        //CharacterFactorInfo HasCharicFactorInfo;
+        //string strkey = string.Empty;
+
+        //while (hasCharacter_enumerator.MoveNext())
+        //{
+        //    strkey = hasCharacter_enumerator.Current;
+        //    if (m_dicHasCharacterFactorInfo.TryGetValue(strkey, out HasCharicFactorInfo) == true)
+        //    {
+        //        if (HasCharicFactorInfo.CharacterType == _CharacterType)
+        //        {
+                    //GameObject gridItemObject = NGUITools.AddChild(m_SelectGrid.SelfObject, m_prefabGridItem);
+                    //UI_TeamControlMode_BottomBtn eventhandler = gridItemObject.AddComponent<UI_TeamControlMode_BottomBtn>();
+                    //eventhandler.Init(strkey, TeamCharFactorInfo);
+
+                    //UISprite[] mainbtnSprite = gridItemObject.GetComponentsInChildren<UISprite>();
+                    //if (_CharacterType == eCharacterType.CHARACTER_TYPE_MAIN)
+                    //{
+                    //    mainbtnSprite[1].atlas = Resources.Load<UIAtlas>("CharacterImg");
+                    //    mainbtnSprite[1].depth = 2;
+                    //}
+
+                    //mainbtnSprite[1].spriteName = strkey;
+
+                    // UILabel mainbtnLabel = gridItemObject.GetComponentInChildren<UILabel>();
+                    // mainbtnLabel.text = HasCharicFactorInfo.Name;
+          //      }
+          //  }
+       // }
+    }
+
+    void PrevListDelete(UIGridObject _grid)
+    {
+        // 기존목록 삭제
+        List<Transform> listDelete = new List<Transform>();
+
+        for (int i = 0; i < _grid.SelfTransform.childCount; ++i)
+        {
+            Transform childTransform = _grid.transform.GetChild(i);
+            listDelete.Add(childTransform);
+        }
+        for (int i = 0; i < listDelete.Count; ++i)
+        {
+            listDelete[i].parent = null;
+            Destroy(listDelete[i].gameObject);
+        }
+        // ~ 기존목록 삭제
+    }
 
     void LoadRanking()
     {
@@ -192,7 +259,7 @@ public class UI_FriendsLobbyForm : UIFormObject {
 			users.Add(user);
 		}*/
         LankMgr.Instance.Sort();
-        
+
         /*users.Sort (delegate(UserInfo x, UserInfo y) {
 			return x.Number.CompareTo(x.Number);
 		});*/

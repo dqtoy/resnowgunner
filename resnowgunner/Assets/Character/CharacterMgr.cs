@@ -29,6 +29,7 @@ public struct CharacterFactorInfo
     public int RequiredPrice;
     public string hobby;
     public FactorTable factorTable;
+//    public LevelTable levelTable;
 }
 public class CharacterMgr : BaseMgr<CharacterMgr>
 {
@@ -113,7 +114,7 @@ public class CharacterMgr : BaseMgr<CharacterMgr>
 
     void Init()
     {
-        // 소지 케릭터 정보
+        // 소지 캐릭터 정보
         List<string>.Enumerator hasCharEnumerator = m_listHasCharacter.GetEnumerator();
 
         GameCharacter selectingGameCharacter = null;
@@ -132,7 +133,8 @@ public class CharacterMgr : BaseMgr<CharacterMgr>
             return null;
 
         GameCharacter myCharacter = null;
-
+        
+        // 전체 캐릭터 한명씩 추가
         if (m_dicGameCharacter.TryGetValue(strTemplateKey, out myCharacter) != true)
         {
             GameCharacter gameCharacter = new GameCharacter();
@@ -168,15 +170,15 @@ public class CharacterMgr : BaseMgr<CharacterMgr>
         return templateData;
     }
 
-    //sjh Ui Info
-    public Dictionary<string, CharacterFactorInfo> MakeUIInfo()
+    // sjh + Min-Goo Ui Info
+    public void MakeUI()
     {
         CharacterFactorInfo stFactorInfo;
 
-        // 소지 케릭터 정보
+        // 소지 캐릭터 정보
         List<string>.Enumerator hasCharEnumerator = m_listHasCharacter.GetEnumerator();
 
-        // 전체 케릭 정보
+        // 전체 캐릭터 정보
         Dictionary<string, GameCharacter>.Enumerator charenumerator = m_dicGameCharacter.GetEnumerator();
 
         string strcharkey = string.Empty;
@@ -192,46 +194,27 @@ public class CharacterMgr : BaseMgr<CharacterMgr>
 
                 //sjh
                 stFactorInfo.CharacterType = selectingGameCharacter.CHARACTER_TEMPLATE.CHARACTER_TYPE;
-                
-
                 stFactorInfo.CharacterKey = selectingGameCharacter.CHARACTER_TEMPLATE.CHARACTER_KEY;
                 stFactorInfo.RaceType = selectingGameCharacter.CHARACTER_TEMPLATE.RACE_TYPE;
                 stFactorInfo.Key = selectingGameCharacter.CHARACTER_TEMPLATE.KEY;
                 stFactorInfo.Name = selectingGameCharacter.CHARACTER_TEMPLATE.NAME;
                 stFactorInfo.PrefabName = selectingGameCharacter.CHARACTER_TEMPLATE.PREFAB_NAME;
-                //stFactorInfo.Health = selectingGameCharacter.CHARACTER_TEMPLATE.HEALTH;
-                //stFactorInfo.DaySpd = selectingGameCharacter.CHARACTER_TEMPLATE.DAYSPD;
-                //stFactorInfo.NightSpd = selectingGameCharacter.CHARACTER_TEMPLATE.NIGHTSPD;
                 stFactorInfo.factorTable = selectingGameCharacter.CHARACTER_TEMPLATE.FACTOR_TABLE;
                 stFactorInfo.RequiredLv = selectingGameCharacter.CHARACTER_TEMPLATE.REQUIRED_LEVEL;
                 stFactorInfo.IsPurchasing = selectingGameCharacter.CHARACTER_TEMPLATE.IS_PURCHASING;
                 stFactorInfo.RequiredPrice = selectingGameCharacter.CHARACTER_TEMPLATE.REQUIRED_PRICE;
                 stFactorInfo.hobby = selectingGameCharacter.CHARACTER_TEMPLATE.HOBBY;
                 stFactorInfo.factorTable = selectingGameCharacter.CHARACTER_TEMPLATE.FACTOR_TABLE;
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-                //selectingGameCharacter.CHARACTER_TEMPLATE.LIST_EXTRA_CLASS
-                //selectingGameCharacter.CHARACTER_TEMPLATE.LIST_EXTRA_CLASS_PARAM_F            
+//                stFactorInfo.levelTable = selectingGameCharacter.CHARACTER_TEMPLATE.LEVEL_TABLE;
+                // 아직 쓰이지 않는 변수
+                // selectingGameCharacter.CHARACTER_TEMPLATE.LIST_EXTRA_CLASS
+                // selectingGameCharacter.CHARACTER_TEMPLATE.LIST_EXTRA_CLASS_PARAM_F            
                 if (m_dicFactorInfo.ContainsKey(strcharkey) != true)
                     m_dicFactorInfo.Add(strcharkey, stFactorInfo);
             }
-
-
         }
 
-        return m_dicFactorInfo;
+        //return m_dicFactorInfo;
     }
     //sjh Selecting Character Info
     

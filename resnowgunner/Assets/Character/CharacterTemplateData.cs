@@ -5,7 +5,7 @@ using System;
 
 public enum eCharacterKey
 {
-    CHARACTER_KEY_NONE, // 0
+    //CHARACTER_KEY_NONE, // 0
     CHARACTER_1,        // 1
     CHARACTER_2,        // 2
     CHARACTER_JOHN,     // 3
@@ -17,7 +17,7 @@ public enum eCharacterKey
 }
 public enum eCharacterType
 {
-    CHARACTER_TYPE_NONE,  // 0
+    //CHARACTER_TYPE_NONE,  // 0
     CHARACTER_TYPE_MAIN,  // 1
     CHARACTER_TYPE_ASSIST,// 2
     CHARACTER_TYPE_FRIEND,// 3
@@ -26,7 +26,7 @@ public enum eCharacterType
 }
 public enum eRaceType
 {
-    RACE_TYPE_NONE,
+    //RACE_TYPE_NONE,
     RACE_TYPE_HUMAN,
     RACE_TYPE_ELF,
     RACE_TYPE_WORGEN,
@@ -42,9 +42,9 @@ public class CharacterTemplateData
     }
 
     //KEY eCharacterKey
-    eCharacterKey m_CharacterKey = eCharacterKey.CHARACTER_KEY_NONE;
+    eCharacterKey m_CharacterKey = eCharacterKey.CHARACTER_1;
     //TYPE 캐릭터 타입 CHARACTER_TYPE_MAIN 1
-    eCharacterType m_CharacterType = eCharacterType.CHARACTER_TYPE_NONE;
+    eCharacterType m_CharacterType;
     
     public eCharacterType CHARACTER_TYPE
     {
@@ -58,7 +58,10 @@ public class CharacterTemplateData
     // m_FactorTable에 Json으로 기본 수치를 받아놓을것임 
     FactorTable m_FactorTable = new FactorTable();
     public FactorTable FACTOR_TABLE { get { return m_FactorTable; } }
-    
+
+    //LevelTable m_LevelTable = new LevelTable();
+    //public LevelTable LEVEL_TABLE { get { return m_LevelTable; } }
+
     string m_strName  = string.Empty;
     string m_strPrefabName = string.Empty;
 
@@ -72,7 +75,7 @@ public class CharacterTemplateData
     }
 
     //RACE eRaceType RACE_TYPE_HUMAN
-    eRaceType m_RaceType = eRaceType.RACE_TYPE_NONE;
+    eRaceType m_RaceType;
     public eRaceType RACE_TYPE
     {
         get { return m_RaceType; }
@@ -149,6 +152,8 @@ public class CharacterTemplateData
                 m_FactorTable.IncreaseData(factorData, valueData);
         }
 
+
+        //m_LevelTable = LevelMgr.Instance.LEVEL_TEMPLATE[m_strKey].LEVEL_TABLE;
         m_strName = nodeData["NAME"];
         m_strPrefabName = nodeData["PREFAB_NAME"];
 
@@ -198,9 +203,10 @@ public class CharacterTemplateData
             case "WORGEN":
                 m_RaceType = eRaceType.RACE_TYPE_WORGEN;
                 break;
-            default:
+            /*default:
                 m_RaceType = eRaceType.RACE_TYPE_NONE;
                 break;
+                */
         }
 
     }

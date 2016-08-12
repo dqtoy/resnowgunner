@@ -85,4 +85,31 @@ public class BaseObject : CacheObject
     {
 
     }
+
+    public Transform GetChild(string strName)
+    {
+        //재귀로 탐색
+        return _GetChild(strName, SelfTransform);
+
+    }
+
+    Transform _GetChild(string strName, Transform trans)
+    {
+        if (trans.name == strName)
+            return trans;
+
+
+        for (int i = 0; i < trans.childCount; ++i)
+        {
+            Transform returnTrans = _GetChild(strName, trans.GetChild(i));
+
+            if (returnTrans != null)
+            {
+                return returnTrans;
+            }
+
+        }
+
+        return null;
+    }
 }

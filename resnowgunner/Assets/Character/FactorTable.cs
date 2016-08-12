@@ -50,7 +50,7 @@ public sealed class FactorTable {
         m_dicData.Remove(factorData);
     }
 
-    public double GetFactorData(eFactorData factorData)
+    public double GetData(eFactorData factorData)
     {
         double valueData = 0.0f;
         m_dicData.TryGetValue(factorData, out valueData);

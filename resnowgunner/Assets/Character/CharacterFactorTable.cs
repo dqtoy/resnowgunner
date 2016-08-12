@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public sealed class CharacterFactorTable
 {
     Dictionary<eCharacterKey, FactorTable> m_dicFactor = new Dictionary<eCharacterKey, FactorTable>();
-
+    
     // 모든 수치가 합쳐진 totalfactor
 
     FactorTable m_totalFactor = new FactorTable();
@@ -28,7 +28,7 @@ public sealed class CharacterFactorTable
     public double GetFactorData(eFactorData factorData)
     {
         _RefreshTotalFactor();
-        return m_totalFactor.GetFactorData(factorData);
+        return m_totalFactor.GetData(factorData);
     }
 
     void _RefreshTotalFactor()

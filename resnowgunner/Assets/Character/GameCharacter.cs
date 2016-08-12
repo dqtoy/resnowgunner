@@ -8,7 +8,7 @@ public class GameCharacter : BaseObject {
 
     CharacterTemplateData m_TemplateData = null;
     CharacterFactorTable m_CharacterFactorTable = new CharacterFactorTable();
-    //CharacterGrowTable m_CharacterGrowTable = new CharacterGrowTable();
+    LevelGrowTable m_LevelTable = new LevelGrowTable();
 
     //grow
     //Skill
@@ -23,17 +23,34 @@ public class GameCharacter : BaseObject {
 
     public CharacterFactorTable CHARACTER_FACTOR { get { return m_CharacterFactorTable; } }
     public CharacterTemplateData CHARACTER_TEMPLATE { get { return m_TemplateData; } }
-
+    public LevelGrowTable LEVEL_TEMPLATE { get { return m_LevelTable; } }
     public void SetTemplate(CharacterTemplateData templateData)
     {
 
         m_TemplateData = templateData;
 
         // "CHARACTER" <- Key
-        m_CharacterFactorTable.AddFactorTable(m_TemplateData.CHARACTER_KEY, m_TemplateData.FACTOR_TABLE);
-
+        m_CharacterFactorTable.AddFactorTable(eCharacterKey.CHARACTER_1, m_TemplateData.FACTOR_TABLE);
+        //m_CharacterFactorTable.AddFactorTable("CHARACTER", m_TemplateData.FACTOR_TABLE);
         m_CurrentHP = CHARACTER_FACTOR.GetFactorData(eFactorData.HEALTH);
         m_DaySpd = CHARACTER_FACTOR.GetFactorData(eFactorData.DAY_SPEED);
         m_NightSpd = CHARACTER_FACTOR.GetFactorData(eFactorData.NIGHT_SPEED);
+        //Error1
+        //m_LevelTable = LevelGrowMgr.Instance.LEVEL_GROW_TABLE;
+    }
+
+    public void IncreaseCurrentHP(double valueData)
+    {
+        m_CurrentHP += valueData;
+        if (m_CurrentHP < 0)
+            m_CurrentHP = 0;
+
+        if (m_CurrentHP > CHARACTER_FACTOR.GetFactorData(eFactorData.HEALTH))
+            m_CurrentHP = CHARACTER_FACTOR.GetFactorData(eFactorData.HEALTH);
+
+        if (m_CurrentHP == 0)
+        {
+            OBJECT_STATE = eBaseObjectState.STATE_DIE;
+        }
     }
 }
