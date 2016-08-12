@@ -28,30 +28,55 @@ public class LevelGrowMgr : BaseMgr<LevelGrowMgr> {
 
                 foreach (KeyValuePair<string,JSONNode> keyValue in CharacterGrowDataNode)
                 {
-                    Debug.Log(keyValue);
-                }
-
-
-
-                foreach (KeyValuePair<string, JSONNode> keyValue in CharacterExpData_Character_1)
-                {
-                    LevelGrowTemplate _Character_1Temp = new LevelGrowTemplate(keyValue.Key);
                     List<LevelGrowTemplate> m_list = null;
-                    if (m_dicLevelGrowTable.ContainsKey(keyValue.Key) == false)
+                    if(m_dicLevelGrowTable.TryGetValue(keyValue.Key,out m_list )==false)
                     {
-                        // m_list == JSONNode 불일치
                         m_list = new List<LevelGrowTemplate>();
-                        //Error1
-                        /*LevelGrowTemplate levelGrowTemplate = LevelGrowTemplate(keyValue.Key);
-                        m_list.Add(levelGrowTemplate);
-                        m_dicLevelGrowTable.Add(keyValue.Key, m_list);*/
+
+                        for (int i = 0, imax = keyValue.Value.Count; i < imax; ++i)
+                        {
+                            LevelGrowTemplate _template = new LevelGrowTemplate(keyValue.Value[i]);
+                            m_list.Add(_template);
+                        }
+
+                        m_dicLevelGrowTable.Add(keyValue.Key, m_list);
                     }
                     else
                     {
-                        m_list.Add(_Character_1Temp);
+                        for (int i = 0, imax = keyValue.Value.Count; i < imax; ++i)
+                        {
+                            LevelGrowTemplate _template = new LevelGrowTemplate(keyValue.Value[i]);
+
+                            if (m_list.Contains(_template) == false)
+                                m_list.Add(_template);
+                        }
                     }
-                    m_list.Add(_Character_1Temp);
+                    
+
                 }
+                Debug.Log(m_dicLevelGrowTable);
+
+
+
+                //foreach (KeyValuePair<string, JSONNode> keyValue in CharacterExpData_Character_1)
+                //{
+                //    LevelGrowTemplate _Character_1Temp = new LevelGrowTemplate(keyValue.Key);
+                //    List<LevelGrowTemplate> m_list = null;
+                //    if (m_dicLevelGrowTable.ContainsKey(keyValue.Key) == false)
+                //    {
+                //        // m_list == JSONNode 불일치
+                //        m_list = new List<LevelGrowTemplate>();
+                //        //Error1
+                //        /*LevelGrowTemplate levelGrowTemplate = LevelGrowTemplate(keyValue.Key);
+                //        m_list.Add(levelGrowTemplate);
+                //        m_dicLevelGrowTable.Add(keyValue.Key, m_list);*/
+                //    }
+                //    else
+                //    {
+                //        m_list.Add(_Character_1Temp);
+                //    }
+                //    m_list.Add(_Character_1Temp);
+                //}
             }
             /* 현재 위의 예전의 소스
             for (int i = 0; i < arrCharacter_1.Count; ++i)
