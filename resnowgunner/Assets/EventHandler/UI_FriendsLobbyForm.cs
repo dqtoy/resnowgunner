@@ -100,9 +100,10 @@ public class UI_FriendsLobbyForm : UIFormObject
         // GAME_CHARACTER가 아닌 SELECTING_CHARACTER에서 목록을 생성하게 코드 변경 예정
 
         Charic_Preview_Info(eCharacterType.CHARACTER_TYPE_MAIN);
+        CharacterMgr.Instance.InitData();
         CharacterMgr.Instance.MakeUI();
-
-        foreach (KeyValuePair<string, GameCharacter> Gunner in CharacterMgr.Instance.GAME_CHARACTER)
+        Dictionary<string, GameCharacter> gameGunner = CharacterMgr.Instance.GetFullGameCharacter();
+        foreach (KeyValuePair<string, GameCharacter> Gunner in gameGunner)
         {
             GameObject charteritem = NGUITools.AddChild(m_SelectGrid.SelfObject, CharacterPrefab);
             GameObject GunnerPrefab = Resources.Load("Character/" + Gunner.Value.CHARACTER_TEMPLATE.PREFAB_NAME) as GameObject;

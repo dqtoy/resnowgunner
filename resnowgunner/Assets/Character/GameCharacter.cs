@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 //모든 수치를 하나로 통합해주는 클래스
 public class GameCharacter : BaseObject {
     double m_CurrentHP = 0;
@@ -32,13 +33,11 @@ public class GameCharacter : BaseObject {
         m_TemplateData = templateData;
 
         // "CHARACTER" <- Key
-        m_CharacterFactorTable.AddFactorTable(eCharacterKey.CHARACTER_1, m_TemplateData.FACTOR_TABLE);
-        //m_CharacterFactorTable.AddFactorTable("CHARACTER", m_TemplateData.FACTOR_TABLE);
+        m_CharacterFactorTable.AddFactorTable(templateData.CHARACTER_KEY, templateData.FACTOR_TABLE);
         m_CurrentHP = CHARACTER_FACTOR.GetFactorData(eFactorData.HEALTH);
         m_DaySpd = CHARACTER_FACTOR.GetFactorData(eFactorData.DAY_SPEED);
         m_NightSpd = CHARACTER_FACTOR.GetFactorData(eFactorData.NIGHT_SPEED);
-        //Error1
-        growMgr = LevelGrowMgr.Instance;
+        m_LevelTable = LevelGrowMgr.Instance.GetLevelGrowTable(templateData.CHARACTER_KEY.ToString());
     }
 
     public void IncreaseCurrentHP(double valueData)

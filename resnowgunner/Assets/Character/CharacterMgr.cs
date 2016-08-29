@@ -72,6 +72,14 @@ public class CharacterMgr : BaseMgr<CharacterMgr>
 
     void Start ()
     {
+        
+        //InitGameCharacter();
+        Init();
+    }
+
+
+    public void InitData()
+    {
         //Min-Goo 2016년 4월 11일 오전 3시 56분 JSON Parsing
         //Min-Goo 2016년 6월 15일 JSON 파일 형식 읽어오기
         TextAsset charText = Resources.Load<TextAsset>("CHARIC_TEMPL");
@@ -81,23 +89,20 @@ public class CharacterMgr : BaseMgr<CharacterMgr>
             if (nodeData != null)
             {
                 JSONClass charInfoNode = nodeData["CHARIC_TEMPLATE"] as JSONClass;
-                if(charInfoNode!=null)
+                if (charInfoNode != null)
                 {
                     foreach (KeyValuePair<string, JSONNode> keyValue in charInfoNode)
                     {
                         m_dicTemplateData.Add(keyValue.Key, new CharacterTemplateData(keyValue.Key, keyValue.Value));
                     }
-                }  
+                }
             }
         }
         //sjh ~JSON Parsing
         //sjh InitHasCharacter
-		//min Start 함수가 먼저 호출되고 m_listHasCharacter[가지고 있는 캐릭터]의 목록이 생기게끔 임시 해결책.
+        //min Start 함수가 먼저 호출되고 m_listHasCharacter[가지고 있는 캐릭터]의 목록이 생기게끔 임시 해결책.
         InitHasCharacter();
-        //InitGameCharacter();
-        Init();
     }
-
     void InitHasCharacter()
     {
         if (m_dicTemplateData.Count == 0)
@@ -162,6 +167,10 @@ public class CharacterMgr : BaseMgr<CharacterMgr>
 
     }
 
+    public Dictionary<string, GameCharacter> GetFullGameCharacter()
+    {
+        return m_dicGameCharacter;
+    }
 
     public CharacterTemplateData GetTemplate(string strTemplateKey)
     {

@@ -6,9 +6,9 @@ using System.Collections.Generic;
 
 public class LevelGrowTable
 {
-    Dictionary<string, IFactorTable> m_dicIFactor = new Dictionary<string, IFactorTable>();
+    Dictionary<string, List<IFactorTable>> m_dicIFactor = new Dictionary<string, List<IFactorTable>>();
     // 원래 계획 현재는 EMPTY 비어있게끔...
-    Dictionary<string, List<eLevelData>> m_dicLevelData = new Dictionary<string, List<eLevelData>>();
+    //Dictionary<string, List<eLevelData>> m_dicLevelData = new Dictionary<string, List<eLevelData>>();
     
     // 모든 수치가 합쳐진 itotalfactor
     IFactorTable m_totalFactor = new IFactorTable();
@@ -23,7 +23,7 @@ public class LevelGrowTable
     bool m_bRefresh = false;
 
     // strKey 는 임의이 key값... 아이템이름.. 종류 케릭터 등등 다양
-    public void AddFactorTable(string strKey, IFactorTable ifactorTable)
+    public void AddFactorTable(string strKey, List<IFactorTable> ifactorTable)
     {
         m_dicIFactor.Remove(strKey);
         m_dicIFactor.Add(strKey, ifactorTable);
@@ -33,7 +33,6 @@ public class LevelGrowTable
     public void RemoveFactorTable(string strKey)
     {
         m_dicIFactor.Remove(strKey);
-
         m_bRefresh = true;
     }
 
@@ -58,12 +57,14 @@ public class LevelGrowTable
         m_totalFactor.InitData();
 
         //대입
-        foreach (KeyValuePair<string, IFactorTable> keyValue in m_dicIFactor)
+        foreach (KeyValuePair<string, List<IFactorTable>> keyValue in m_dicIFactor)
         {
-            IFactorTable table = keyValue.Value;
-            m_totalFactor.Copy(table);
+            List<IFactorTable> table = keyValue.Value;
+            for (int i = 0, imax = table.Count; i < imax; ++i)
+            {
+                m_totalFactor.Copy(table[i]);
+            }   
         }
-
         m_bRefresh = false;
     }
 }

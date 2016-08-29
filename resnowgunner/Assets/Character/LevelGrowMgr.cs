@@ -6,11 +6,12 @@ using SimpleJSON;
 
 public class LevelGrowMgr : BaseMgr<LevelGrowMgr> {
     // EXP DATA
-    Dictionary<string, List<LevelGrowTemplate>> m_dicLevelGrowTable = new Dictionary<string, List<LevelGrowTemplate>>();
-
+    Dictionary<string, List<LevelGrowTemplate>> m_dicLevelGrowTemp = new Dictionary<string, List<LevelGrowTemplate>>();
+    Dictionary<string, LevelGrowTable> m_dicLevelGrowTable = new Dictionary<string, LevelGrowTable>();
     void Awake()
     {
         _LoadGrowTemplate("LEVEL_TABLE");
+        _LoadGrowTable();
     }
     void _LoadGrowTemplate(string strFileName)
     {
@@ -41,7 +42,7 @@ public class LevelGrowMgr : BaseMgr<LevelGrowMgr> {
                         m_list.Add(_template);
                         Debug.Log("LEVEL = " + _template.LEVEL + ", EXP = " + _template.EXP + ", DIFF = " + _template.DIFF);
                     }
-                    m_dicLevelGrowTable.Add("CHARACTER_1", m_list);
+                    m_dicLevelGrowTemp.Add("CHARACTER_1", m_list);
                 }
 
                 // 여자 아처(여성궁수)
@@ -54,7 +55,7 @@ public class LevelGrowMgr : BaseMgr<LevelGrowMgr> {
                         m_list.Add(_template);
                         Debug.Log("LEVEL = " + _template.LEVEL + ", EXP = " + _template.EXP + ", DIFF = " + _template.DIFF);
                     }
-                    m_dicLevelGrowTable.Add("CHARACTER_2", m_list);
+                    m_dicLevelGrowTemp.Add("CHARACTER_2", m_list);
                 }
                 // 존 거너
                 if (arrCharacter_JOHN != null)
@@ -66,7 +67,7 @@ public class LevelGrowMgr : BaseMgr<LevelGrowMgr> {
                         m_list.Add(_template);
                         Debug.Log("LEVEL = " + _template.LEVEL + ", EXP = " + _template.EXP + ", DIFF = " + _template.DIFF);
                     }
-                    m_dicLevelGrowTable.Add("CHARACTER_JOHN", m_list);
+                    m_dicLevelGrowTemp.Add("CHARACTER_JOHN", m_list);
                 }
                 // 마틴 거너
                 if (arrCharacter_MARTHIN != null)
@@ -78,7 +79,7 @@ public class LevelGrowMgr : BaseMgr<LevelGrowMgr> {
                         m_list.Add(_template);
                         Debug.Log("LEVEL = " + _template.LEVEL + ", EXP = " + _template.EXP + ", DIFF = " + _template.DIFF);
                     }
-                    m_dicLevelGrowTable.Add("CHARACTER_MARTHIN", m_list);
+                    m_dicLevelGrowTemp.Add("CHARACTER_MARTHIN", m_list);
                 }
                 // 리차드 거너
                 if (arrCharacter_RICHARD != null)
@@ -90,7 +91,7 @@ public class LevelGrowMgr : BaseMgr<LevelGrowMgr> {
                         m_list.Add(_template);
                         Debug.Log("LEVEL = " + _template.LEVEL + ", EXP = " + _template.EXP + ", DIFF = " + _template.DIFF);
                     }
-                    m_dicLevelGrowTable.Add("CHARACTER_RICHARD", m_list);
+                    m_dicLevelGrowTemp.Add("CHARACTER_RICHARD", m_list);
                 }
                 // 로버트 거너
                 if (arrCharacter_ROBERT != null)
@@ -102,7 +103,7 @@ public class LevelGrowMgr : BaseMgr<LevelGrowMgr> {
                         m_list.Add(_template);
                         Debug.Log("LEVEL = " + _template.LEVEL + ", EXP = " + _template.EXP + ", DIFF = " + _template.DIFF);
                     }
-                    m_dicLevelGrowTable.Add("CHARACTER_ROBERT", m_list);
+                    m_dicLevelGrowTemp.Add("CHARACTER_ROBERT", m_list);
                 }
                 // 캐서린 마법사
                 if (arrCharacter_CATHERINE != null)
@@ -114,7 +115,7 @@ public class LevelGrowMgr : BaseMgr<LevelGrowMgr> {
                         m_list.Add(_template);
                         Debug.Log("LEVEL = " + _template.LEVEL + ", EXP = " + _template.EXP + ", DIFF = " + _template.DIFF);
                     }
-                    m_dicLevelGrowTable.Add("CHARACTER_CATHERINE", m_list);
+                    m_dicLevelGrowTemp.Add("CHARACTER_CATHERINE", m_list);
                 }
                 /* JSONArray 전체 출력
                 foreach (KeyValuePair<string,JSONNode> keyValue in CharacterGrowDataNode)
@@ -129,7 +130,7 @@ public class LevelGrowMgr : BaseMgr<LevelGrowMgr> {
                             LevelGrowTemplate _template = new LevelGrowTemplate(keyValue.Value[i]);
                             m_list.Add(_template);
                         }
-                        m_dicLevelGrowTable.Add(keyValue.Key, m_list);
+                        m_dicLevelGrowTemp.Add(keyValue.Key, m_list);
                     }
                     else
                     {
@@ -141,14 +142,41 @@ public class LevelGrowMgr : BaseMgr<LevelGrowMgr> {
                         }
                     }
                 }*/
-                Debug.Log(m_dicLevelGrowTable);
+                Debug.Log(m_dicLevelGrowTemp);
             }
+        }
+    }
+    public void _LoadGrowTable()
+    {
+        foreach (KeyValuePair<string, List<LevelGrowTemplate>> item in m_dicLevelGrowTemp)
+        {
+            List<LevelGrowTemplate> m_growlist = null;
+            m_dicLevelGrowTemp.TryGetValue(item.Key, out m_growlist);
+            LevelGrowTable levelgrowtable = new LevelGrowTable();
+            List<IFactorTable> ifactortableList = new List<IFactorTable>();
+            for (int i = 0, imax = m_growlist.Count; i < imax; ++i)
+            {
+                IFactorTable ifactorTableData = new IFactorTable();
+                
+                ifactorTableData.AddFullData(eLevelData.LEVEL, m_growlist[i].LEVEL, eLevelData.EXP, m_growlist[i].EXP, eLevelData.DIFF, m_growlist[i].DIFF);
+                ifactortableList.Add(ifactorTableData);
+                ifactorTableData.InitData();
+            }
+            levelgrowtable.AddFactorTable(item.Key, ifactortableList);
+            m_dicLevelGrowTable.Add(item.Key, levelgrowtable);
         }
     }
     public List<LevelGrowTemplate> GetLevelGrowTemplate(string strName)
     {
         List<LevelGrowTemplate> LevelGrowData = null;
-        m_dicLevelGrowTable.TryGetValue(strName, out LevelGrowData);
+        m_dicLevelGrowTemp.TryGetValue(strName, out LevelGrowData);
         return LevelGrowData;
+    }
+
+    public LevelGrowTable GetLevelGrowTable(string strName)
+    {
+        LevelGrowTable growTable = null;
+        m_dicLevelGrowTable.TryGetValue(strName, out growTable);
+        return growTable;
     }
 }

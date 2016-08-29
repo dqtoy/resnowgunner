@@ -18,6 +18,13 @@ public sealed class IFactorTable {
         m_dicData.Clear();
     }
 
+    public void AddFullData(eLevelData elvData1, int valueData1, eLevelData elvData2, int valueData2, eLevelData elvData3, int valueData3)
+    {
+        m_dicData.Add(elvData1, valueData1);
+        m_dicData.Add(elvData2, valueData2);
+        m_dicData.Add(elvData3, valueData3);
+    }
+
     public void Copy(IFactorTable ifactorTable)
     {
         foreach (KeyValuePair<eLevelData, int> keyValue in ifactorTable.m_dicData)
@@ -53,6 +60,11 @@ public sealed class IFactorTable {
     {
         m_dicData[ifactorData] = valueData;
     }
+
+    /*public void AddData(eLevelData ifactorData, int valueData)
+    {
+        m_dicData.Add(ifactorData, valueData);
+    }*/
 
     public void RemoveData(eLevelData ifactorData)
     {
