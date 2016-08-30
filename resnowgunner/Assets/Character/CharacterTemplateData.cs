@@ -17,7 +17,7 @@ public enum eCharacterKey
 }
 public enum eCharacterType
 {
-    //CHARACTER_TYPE_NONE,  // 0
+    CHARACTER_TYPE_NONE,  // 0 20160830 민구가 다시 살린 코드
     CHARACTER_TYPE_MAIN,  // 1
     CHARACTER_TYPE_ASSIST,// 2
     CHARACTER_TYPE_FRIEND,// 3
