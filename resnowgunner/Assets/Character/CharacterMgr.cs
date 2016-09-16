@@ -142,6 +142,12 @@ public class CharacterMgr : BaseMgr<CharacterMgr>
         // 전체 캐릭터 한명씩 추가
         if (m_dicGameCharacter.TryGetValue(strTemplateKey, out myCharacter) != true)
         {
+            //GameObject prefab = Resources.Load("/CharacterView/Model/" + templateData.PREFAB_NAME, typeof(GameObject)) as GameObject;
+            ///CharacterView/Model/
+            //Debug.Log("/CharacterView/Model/" + templateData.PREFAB_NAME);
+            //GameObject Instance = Instantiate(prefab);
+            //GameCharacter gameCharacter = Instance.GetComponent<GameCharacter>();
+            //GameCharacter gameCharacter = (GameCharacter)Instantiate(Resources.Load("/CharacterView/Model/"+templateData.PREFAB_NAME, typeof(GameCharacter))) as GameCharacter;
             GameCharacter gameCharacter = new GameCharacter();
             gameCharacter.SetTemplate(templateData);
             m_dicGameCharacter.Add(strTemplateKey, gameCharacter);
