@@ -8,6 +8,7 @@ public class LevelGrowMgr : BaseMgr<LevelGrowMgr> {
     // EXP DATA
     Dictionary<string, List<LevelGrowTemplate>> m_dicLevelGrowTemp = new Dictionary<string, List<LevelGrowTemplate>>();
     Dictionary<string, LevelGrowTable> m_dicLevelGrowTable = new Dictionary<string, LevelGrowTable>();
+
     void Awake()
     {
         _LoadGrowTemplate("LEVEL_TABLE");

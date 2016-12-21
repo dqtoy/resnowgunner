@@ -22,7 +22,7 @@ public class LevelGrowTable
     //itotalFactor 갱신용
     bool m_bRefresh = false;
 
-    // strKey 는 임의이 key값... 아이템이름.. 종류 케릭터 등등 다양
+    // strKey 는 임의이 캐릭터 key값... 레벨, EXP, 경험치 차이.
     public void AddFactorTable(string strKey, List<IFactorTable> ifactorTable)
     {
         m_dicIFactor.Remove(strKey);
