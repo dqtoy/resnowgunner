@@ -37,6 +37,7 @@ public class GameCharacter : BaseObject {
         m_CurrentHP = CHARACTER_FACTOR.GetFactorData(eFactorData.HEALTH);
         m_DaySpd = CHARACTER_FACTOR.GetFactorData(eFactorData.DAY_SPEED);
         m_NightSpd = CHARACTER_FACTOR.GetFactorData(eFactorData.NIGHT_SPEED);
+        // LevelGrowTable <=> LevelGrowTable
         m_LevelTable = LevelGrowMgr.Instance.GetLevelGrowTable(templateData.CHARACTER_KEY.ToString());
     }
 

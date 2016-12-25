@@ -11,18 +11,20 @@ public enum eLevelData
     COUNT
 }
 public sealed class IFactorTable {
+    //위의 수치에 따른 값이 필요하므로.. DIC
     Dictionary<eLevelData, int> m_dicData = new Dictionary<eLevelData, int>();
 
+    // 데이타 초기화
     public void InitData()
     {
         m_dicData.Clear();
     }
 
-    public void AddFullData(eLevelData elvData1, int valueData1, eLevelData elvData2, int valueData2, eLevelData elvData3, int valueData3)
+    public void DataInput(int level, int exp, int diff)
     {
-        m_dicData.Add(elvData1, valueData1);
-        m_dicData.Add(elvData2, valueData2);
-        m_dicData.Add(elvData3, valueData3);
+        m_dicData.Add(eLevelData.LEVEL, level);
+        m_dicData.Add(eLevelData.EXP, exp);
+        m_dicData.Add(eLevelData.DIFF, exp);
     }
 
     public void Copy(IFactorTable ifactorTable)
@@ -46,6 +48,7 @@ public sealed class IFactorTable {
             m_dicData.Add(ifactorData, valueData);
         }
     }
+
     // 감소
     public void DecreaseData(eLevelData ifactorData, int valueData)
     {
@@ -55,17 +58,12 @@ public sealed class IFactorTable {
             m_dicData[ifactorData] = prevValue - valueData;
         }
     }
-
+    //초기화
     public void SetData(eLevelData ifactorData, int valueData)
     {
         m_dicData[ifactorData] = valueData;
     }
-
-    /*public void AddData(eLevelData ifactorData, int valueData)
-    {
-        m_dicData.Add(ifactorData, valueData);
-    }*/
-
+    //삭제
     public void RemoveData(eLevelData ifactorData)
     {
         m_dicData.Remove(ifactorData);
@@ -74,7 +72,6 @@ public sealed class IFactorTable {
     public int GetData(eLevelData ifactorData)
     {
         int valueData = 0;
-
         m_dicData.TryGetValue(ifactorData, out valueData);
         return valueData;
     }

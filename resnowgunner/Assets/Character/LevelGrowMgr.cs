@@ -12,7 +12,7 @@ public class LevelGrowMgr : BaseMgr<LevelGrowMgr> {
     void Awake()
     {
         _LoadGrowTemplate("LEVEL_TABLE");
-        _LoadGrowTable();
+         //_LoadGrowTable();
     }
     void _LoadGrowTemplate(string strFileName)
     {
@@ -118,32 +118,31 @@ public class LevelGrowMgr : BaseMgr<LevelGrowMgr> {
                     }
                     m_dicLevelGrowTemp.Add("CHARACTER_CATHERINE", m_list);
                 }
-                /* JSONArray 전체 출력
-                foreach (KeyValuePair<string,JSONNode> keyValue in CharacterGrowDataNode)
+                //~ LevelGrowTemplate JSON Parsing
+
+
+                //JSONArray 전체 출력
+
+
+                foreach (KeyValuePair<string, List<LevelGrowTemplate>> keyValue in m_dicLevelGrowTemp)
                 {
                     Debug.Log(keyValue);
-                    List<LevelGrowTemplate> m_list = null;
-                    if(m_dicLevelGrowTable.TryGetValue(keyValue.Key,out m_list )==false)
+                    List<LevelGrowTemplate> m_list = keyValue.Value;
+                    LevelGrowTable levelgrowtable = new LevelGrowTable();
+                    List<IFactorTable> ifactortableList = new List<IFactorTable>();
+                    Dictionary<string, List<IFactorTable>> dicifactor = new Dictionary<string, List<IFactorTable>>();
+                    for (int i = 0, imax = m_list.Count; i < imax; ++i)
                     {
-                        m_list = new List<LevelGrowTemplate>();
-                        for (int i = 0, imax = keyValue.Value.Count; i < imax; ++i)
-                        {
-                            LevelGrowTemplate _template = new LevelGrowTemplate(keyValue.Value[i]);
-                            m_list.Add(_template);
-                        }
-                        m_dicLevelGrowTemp.Add(keyValue.Key, m_list);
+                        //IFactorTable ifactorTable = new IFactorTable();
+                        //ifactorTable.DataInput(keyValue.Value[i].LEVEL, keyValue.Value[i].EXP, keyValue.Value[i].DIFF);
+                        ifactortableList.Add(keyValue.Value[i].IFACTOR_TABLE);
                     }
-                    else
-                    {
-                        for (int i = 0, imax = keyValue.Value.Count; i < imax; ++i)
-                        {
-                            LevelGrowTemplate _template = new LevelGrowTemplate(keyValue.Value[i]);
-                            if (m_list.Contains(_template) == false)
-                                m_list.Add(_template);
-                        }
-                    }
-                }*/
-                Debug.Log(m_dicLevelGrowTemp);
+                    dicifactor.Add(keyValue.Key, ifactortableList);
+                    levelgrowtable.AddFactorTableData(dicifactor);
+                    m_dicLevelGrowTable.Add(keyValue.Key, levelgrowtable);
+                    levelgrowtable.InitData();
+                }
+
             }
         }
     }
@@ -159,7 +158,7 @@ public class LevelGrowMgr : BaseMgr<LevelGrowMgr> {
             {
                 IFactorTable ifactorTableData = new IFactorTable();
                 
-                ifactorTableData.AddFullData(eLevelData.LEVEL, m_growlist[i].LEVEL, eLevelData.EXP, m_growlist[i].EXP, eLevelData.DIFF, m_growlist[i].DIFF);
+                //ifactorTableData.AddFullData(eLevelData.LEVEL, m_growlist[i].LEVEL, eLevelData.EXP, m_growlist[i].EXP, eLevelData.DIFF, m_growlist[i].DIFF);
                 ifactortableList.Add(ifactorTableData);
                 ifactorTableData.InitData();
             }

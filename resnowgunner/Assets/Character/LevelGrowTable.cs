@@ -7,20 +7,26 @@ using System.Collections.Generic;
 public class LevelGrowTable
 {
     Dictionary<string, List<IFactorTable>> m_dicIFactor = new Dictionary<string, List<IFactorTable>>();
-    // 원래 계획 현재는 EMPTY 비어있게끔...
-    //Dictionary<string, List<eLevelData>> m_dicLevelData = new Dictionary<string, List<eLevelData>>();
     
     // 모든 수치가 합쳐진 itotalfactor
     IFactorTable m_totalFactor = new IFactorTable();
 
+    //itotalFactor 갱신용
+    bool m_bRefresh = false;
+
     public void InitData()
     {
         m_dicIFactor.Clear();
-        //m_dicLevelData.Clear();
     }
 
-    //itotalFactor 갱신용
-    bool m_bRefresh = false;
+    
+
+    // 레벨 초기화 데이터 키를 처음에 제거하면 안됨
+    public void AddFactorTableData(Dictionary<string, List<IFactorTable>> dicifactor)
+    {
+        m_bRefresh = true;
+        m_dicIFactor = dicifactor;
+    }
 
     // strKey 는 임의이 캐릭터 key값... 레벨, EXP, 경험치 차이.
     public void AddFactorTable(string strKey, List<IFactorTable> ifactorTable)
@@ -29,6 +35,15 @@ public class LevelGrowTable
         m_dicIFactor.Add(strKey, ifactorTable);
         m_bRefresh = true;
     }
+
+    /* 원본
+    public void AddFactorTable(string strKey, FactorTable factorTable)
+    {
+        m_dicFactor.Remove(strKey);
+        m_dicFactor.Add(strKey, factorTable);
+        m_bRefresh = true;
+    }
+    */
 
     public void RemoveFactorTable(string strKey)
     {
@@ -41,7 +56,7 @@ public class LevelGrowTable
         return m_dicIFactor.ContainsKey(strkey);
     }
 
-    public double GetFactorData(eLevelData ifactorData)
+    public int GetFactorData(eLevelData ifactorData)
     {
         _RefreshTotalFactor();
 
