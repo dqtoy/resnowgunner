@@ -62,6 +62,13 @@ public enum eUIType
     PF_UI_BoardManager,
 }
 
+public enum eUIStateUI
+{
+    PF_UI_Logo,
+    PF_UI_FriendsLobby,
+    PF_UI_3D_PROGRESS_MAP,
+    PF_UI_MAIN_STAGE,
+}
 public enum eCharacterViewObjectType
 {
     CharacterView_1,
@@ -72,8 +79,11 @@ public class UIMgr : BaseMgr<UIMgr> {
     Dictionary<eCharacterViewObjectType, GameObject> m_dicCharacterViewObject = new Dictionary<eCharacterViewObjectType, GameObject>();
     UIButton uibutton;
 
-    
 
+    public GameObject GetShowUI(eStateType stateType, eUIStateUI stateUIname)
+    {
+        return StateMgr.Instance.GetStateUI(stateType, stateUIname.ToString("F"));
+    }
     public void ShowLoadingUI(float fValue)
     {
         GameObject loadingui = _GetUI(eUIType.PF_UI_LOADING);

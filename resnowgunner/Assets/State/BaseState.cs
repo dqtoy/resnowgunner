@@ -14,6 +14,17 @@ public class BaseState : MonoBehaviour
     List<GameObject> m_listMakeUI = new List<GameObject>();
     List<GameObject> m_listMakeObject = new List<GameObject>();
 
+    public List<GameObject> LIST_PREFAB_UI
+    {
+        get { return m_listMakeUI; }
+    }
+
+    public List<GameObject> LIST_PREFAB_OBJECT
+    {
+        get { return m_listMakeObject; }
+    }
+
+
     BaseState m_NextState = null;
 
     protected stSceneInfo m_SceneInfo;
@@ -37,7 +48,7 @@ public class BaseState : MonoBehaviour
             {
                 GameObject prefabUI = Resources.Load<GameObject>(SCENE_INFO.arrUI[i]);
                 GameObject uiInstance = NGUITools.AddChild(null, prefabUI);
-
+                uiInstance.name = SCENE_INFO.arrUI[i];
                 m_listMakeUI.Add(uiInstance);
             }
         }
@@ -48,7 +59,7 @@ public class BaseState : MonoBehaviour
             {
                 GameObject prefabObject = Resources.Load<GameObject>(SCENE_INFO.arrObject[i]);
                 GameObject objectInstance = GameObject.Instantiate(prefabObject);
-
+                objectInstance.name = SCENE_INFO.arrObject[i];
                 m_listMakeObject.Add(objectInstance);
             }
         }

@@ -54,7 +54,7 @@ public class Player : MonoBehaviour {
 	UISprite W_Color, E_Color, A_Color, P_Color, O_Color, N_Color, F_Color, L_Color, Y_Color;
 
 	bool IsCoolTime = false;
-	GameManagerMain gmm;
+	GameManagerMain GameMgr;
 	Stage2Map stage2map;
 	HouseMap housemap;
 	[ContextMenu ("BonusTime")]
@@ -71,20 +71,21 @@ public class Player : MonoBehaviour {
 	}
 	void Start () {
 		housemap = GameObject.Find ("BackGroundHouse").GetComponent<HouseMap>();
-		AttackButton = GameObject.Find ("UI Root/Attack").GetComponent<UIButton>();
-		AttackGameObject = GameObject.Find ("UI Root/Attack").gameObject;
+        GameMgr = UIMgr.Instance.GetShowUI(eStateType.STATE_TYPE_STAGE, eUIStateUI.PF_UI_MAIN_STAGE).GetComponent<GameManagerMain>();
+        
+        AttackGameObject = GameMgr.Attack.gameObject;
 		AttackSprite = AttackGameObject.transform.FindChild("Screen").GetComponent<UISprite>();
-		CoolTimeLabel = GameObject.Find ("UI Root/Attack/CoolTimeTimeLabel").GetComponent<UILabel>();
-		W_Color = GameObject.Find ("UI Root/AlphabetList/W/W_Color").GetComponent<UISprite>();
-		E_Color = GameObject.Find ("UI Root/AlphabetList/E/E_Color").GetComponent<UISprite>();
-		A_Color = GameObject.Find ("UI Root/AlphabetList/A/A_Color").GetComponent<UISprite>();
-		P_Color = GameObject.Find ("UI Root/AlphabetList/P/P_Color").GetComponent<UISprite>();
-		O_Color = GameObject.Find ("UI Root/AlphabetList/O/O_Color").GetComponent<UISprite>();
-		N_Color = GameObject.Find ("UI Root/AlphabetList/N/N_Color").GetComponent<UISprite>();
-		F_Color = GameObject.Find ("UI Root/AlphabetList/F/F_Color").GetComponent<UISprite>();
-		L_Color = GameObject.Find ("UI Root/AlphabetList/L/L_Color").GetComponent<UISprite>();
-		Y_Color = GameObject.Find ("UI Root/AlphabetList/Y/Y_Color").GetComponent<UISprite>();
-		gmm = GameObject.Find("GameManager").GetComponent<GameManagerMain>();
+		CoolTimeLabel = AttackGameObject.transform.Find ("CoolTimeTimeLabel").GetComponent<UILabel>();
+        W_Color = GameMgr.W_Color;
+        E_Color = GameMgr.E_Color;
+        A_Color = GameMgr.A_Color;
+        P_Color = GameMgr.P_Color;
+        O_Color = GameMgr.O_Color;
+        N_Color = GameMgr.N_Color;
+        F_Color = GameMgr.F_Color;
+        L_Color = GameMgr.L_Color;
+        Y_Color = GameMgr.Y_Color;
+       
 		anim = GetComponent<Animator>();
 		StartPosY = transform.position.y+12.0f;
 		stage2map = GameObject.Find ("Map2").GetComponent<Stage2Map> ();
@@ -115,9 +116,9 @@ public class Player : MonoBehaviour {
 						&& N_Color.fillAmount == 1.0f && F_Color.fillAmount == 1.0f && L_Color.fillAmount == 1.0f && Y_Color.fillAmount == 1.0f) {
 			stage2map.mapmode = MapMode.BonusMap;
 			housemap.housemode = MapMode.BonusMap;
-			gmm.bonusmode = true;
+            GameMgr.bonusmode = true;
 			StartCoroutine(BonusMode(W_Color,E_Color,A_Color,P_Color,O_Color,N_Color,F_Color,L_Color,Y_Color));
-			gmm.bonusmode = false;
+            GameMgr.bonusmode = false;
 		}
 	}
 	void FixedUpdate () {
@@ -439,22 +440,24 @@ public class Player : MonoBehaviour {
 	}
 	IEnumerator RestartCoroutine() {
 		yield return new WaitForSeconds(0.5f);
-		Application.LoadLevel ("Stage2");
+        StateMgr.Instance.ChangeState(eStateType.STATE_TYPE_STAGE, null);
+        //Application.LoadLevel ("Stage2");
 	}
 	public void NextStage() {
 		StartCoroutine("NextStageCoroutine");
 	}
 	IEnumerator NextStageCoroutine() {
 		yield return new WaitForSeconds(0.5f);
-		Application.LoadLevel ("FriendsWindow2Stage");
+        StateMgr.Instance.ChangeState(eStateType.STATE_TYPE_FRIENDS_LOBBY, null);
+		//Application.LoadLevel ("FriendsWindow2Stage");
 	}
 	void ColorItemUp(int count, UISprite _ColorSprite) {
-		if (!gmm.bonusmode) {
+		if (!GameMgr.bonusmode) {
 			StartCoroutine (StartColorItemUp (_ColorSprite));
 		}
 	}
 	IEnumerator StartColorItemUp(UISprite _ColorSprite){
-		gmm.life +=100;
+        GameMgr.life +=100;
 		while(_ColorSprite.fillAmount < 1) {
 			_ColorSprite.fillAmount +=0.1f;
 			yield return new WaitForSeconds(0.1f);
@@ -464,52 +467,52 @@ public class Player : MonoBehaviour {
 	public float bonuspeed = 0.05f;
 	IEnumerator BonusMode(UISprite _W_Color, UISprite _E_Color, UISprite _A_Color, UISprite _P_Color, UISprite _O_Color, 
 	                      UISprite _N_Color,UISprite _F_Color,UISprite _L_Color,UISprite _Y_Color){
-		if (gmm.bonusmode) {
+		if (GameMgr.bonusmode) {
 			while (0 < _Y_Color.fillAmount) {
 				_Y_Color.fillAmount -= bonuspeed;	
 				yield return new WaitForSeconds (bonuspeed);
 			}
-			gmm.life +=100;
+            GameMgr.life +=100;
 			while (0 < _L_Color.fillAmount) {
 				_L_Color.fillAmount -= bonuspeed;
 				yield return new WaitForSeconds (bonuspeed);
 			}
-			gmm.life +=100;
+            GameMgr.life +=100;
 			while (0 < _F_Color.fillAmount) {
 				_F_Color.fillAmount -= bonuspeed;
 				yield return new WaitForSeconds (bonuspeed);
 			}
-			gmm.life +=100;
+            GameMgr.life +=100;
 			while (0 < _N_Color.fillAmount) {
 				_N_Color.fillAmount -= bonuspeed;
 				yield return new WaitForSeconds (bonuspeed);
 			}
-			gmm.life +=100;
+            GameMgr.life +=100;
 			while (0 < _O_Color.fillAmount) {
 				_O_Color.fillAmount -= bonuspeed;
 				yield return new WaitForSeconds (bonuspeed);
 			}
-			gmm.life +=100;
+            GameMgr.life +=100;
 			while (0 < _P_Color.fillAmount) {
 				_P_Color.fillAmount -= bonuspeed;
 				yield return new WaitForSeconds (bonuspeed);
 			}
-			gmm.life +=100;
+            GameMgr.life +=100;
 			while (0 < _A_Color.fillAmount) {
 				_A_Color.fillAmount -= bonuspeed;
 				yield return new WaitForSeconds (bonuspeed);
 			}
-			gmm.life +=100;
+            GameMgr.life +=100;
 			while (0 < _E_Color.fillAmount) {
 				_E_Color.fillAmount -= bonuspeed;
 				yield return new WaitForSeconds (bonuspeed);
 			}
-			gmm.life +=100;
+            GameMgr.life +=100;
 			while (0 < _W_Color.fillAmount) {
 				_W_Color.fillAmount -= bonuspeed;
 				yield return new WaitForSeconds (bonuspeed);
 			}
-			gmm.life +=100;
+            GameMgr.life +=100;
 		}
 	}
 

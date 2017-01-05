@@ -1,6 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+public enum eUIStageObj
+{
+    GUNNER,
+    Map2,
+    BackGroundHouse,
+    MainCamera,
+}
 public class StageState : BaseState {
 
     public override eStateType STATE_TYPE
@@ -21,5 +27,6 @@ public class StageState : BaseState {
     public override void EndState()
     {
         base.EndState();
+        //StateMgr.Instance.GetStateObject(eStateType.STATE_TYPE_STAGE, eUIStageObj.MainCamera.ToString("F")).SetActive(true);
     }
 }

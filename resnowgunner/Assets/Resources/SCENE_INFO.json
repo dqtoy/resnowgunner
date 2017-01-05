@@ -23,8 +23,15 @@
 		},
 		"STATE_TYPE_STAGE": {
 			"SCENE_NAME": "StageScene",
-			"UI": [],
-			"OBJECT": []
+			"UI": [
+				"PF_UI_MAIN_STAGE"
+			],
+			"OBJECT": [
+				"GUNNER",
+				"Map2",
+				"BackGroundHouse",
+				"MainCamera"
+			]
 		}
 	}
 }

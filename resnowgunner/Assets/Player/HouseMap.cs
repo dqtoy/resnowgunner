@@ -33,7 +33,7 @@ public class HouseMap : MonoBehaviour {
 	public MapMode housemode;
 	// Use this for initialization
 	void Start () {
-		stage2map = GameObject.Find ("Map2").GetComponent<Stage2Map> ();
+		stage2map = StateMgr.Instance.GetStateObject(eStateType.STATE_TYPE_STAGE, eUIStageObj.Map2.ToString("F")).GetComponent<Stage2Map> ();
 		housemode = MapMode.Map1;
 		House1Prefab = Resources.Load ("Prefabs/House/House1", typeof(Transform)) as Transform;
 		House2Prefab = Resources.Load ("Prefabs/House/House2", typeof(Transform)) as Transform;

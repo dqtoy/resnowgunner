@@ -46,7 +46,7 @@ public class Stage2Map : MonoBehaviour {
 	HouseMap housemap;
 	// Use this for initialization
 	void Awake() {
-		housemap = GameObject.Find ("BackGroundHouse").GetComponent<HouseMap>();
+		//housemap = StateMgr.Instance.GetStateObject(eStateType.STATE_TYPE_STAGE, eUIStageObj.BackGroundHouse.ToString("F")).GetComponent<HouseMap>();
 		seed = DateTime.Now.Millisecond;
 		random = new System.Random(seed);
 		

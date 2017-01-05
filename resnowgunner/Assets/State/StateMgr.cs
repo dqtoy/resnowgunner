@@ -9,7 +9,7 @@ public enum eStateType
     STATE_TYPE_NONE,
     STATE_TYPE_LOGO,          // 20160328 resnowgunner
     STATE_TYPE_FRIENDS_LOBBY, // 20160328 resnowgunner
-    STATE_TYPE_MAP_LOADING,  // 20160411 Min-Goo
+    STATE_TYPE_MAP_LOADING,   // 20160411 Min-Goo
     STATE_TYPE_STAGE,         // 20160328 reTemp
     
     STATE_TYPE_COUNT,
@@ -27,6 +27,11 @@ public class StateMgr : BaseMgr<StateMgr>
     Dictionary<eStateType, BaseState> m_dicState = new Dictionary<eStateType, BaseState>();
     Dictionary<eStateType, stSceneInfo> m_dicSceneInfo = new Dictionary<eStateType, stSceneInfo>();
 
+    public Dictionary<eStateType, stSceneInfo> GET_SCENE_UI 
+    {
+        get { return m_dicSceneInfo; }
+        //set { m_dicSceneInfo = value; }
+    }
     BaseState m_CurrnetState = null;
     AsyncOperation m_Operation = null;
 
@@ -304,5 +309,19 @@ public class StateMgr : BaseMgr<StateMgr>
             m_CurrnetState.ChangeState(stateType, data);
     }
 
+
+    public GameObject GetStateUI(eStateType stateType, string find)
+    {
+        BaseState _basestate = null;
+        m_dicState.TryGetValue(stateType, out _basestate);
+        return _basestate.LIST_PREFAB_UI.Find(x => x.name.Contains(find));
+    }
+
+    public GameObject GetStateObject(eStateType stateType, string find)
+    {
+        BaseState _basestate = null;
+        m_dicState.TryGetValue(stateType, out _basestate);
+        return _basestate.LIST_PREFAB_OBJECT.Find(x => x.name.Contains(find));
+    }
 }
 

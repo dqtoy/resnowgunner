@@ -15,7 +15,7 @@ public class MoveToSnowTown : BaseMgr<MoveToSnowTown> {
     public bool IS_PROGRESSEND  { get { return m_IsProgreesEnd;} set { m_IsProgreesEnd = value; } }
 
 	void Start () {
-		Stage1 = GameObject.Find ("PF_UI_3D_PROGRESS_MAP(Clone)/Stage1");
+		Stage1 = GameObject.Find ("PF_UI_3D_PROGRESS_MAP/Stage1");
         m_MapPlayer = (Instantiate(Resources.Load("ProgressMap/Model/MapSelectGunner", typeof(GameObject)), new Vector3(0,0.1f,0), Quaternion.identity) as GameObject).transform;
         m_MapPlayer.localScale = new Vector3(0.2f, 0.2f, 0.2f);
         

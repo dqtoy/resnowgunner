@@ -7,7 +7,7 @@ public class CatchCamera : MonoBehaviour {
 	float OffsetX = -8.0f;
 	//float OffsetY;
 	void Start () {
-
+        Target = StateMgr.Instance.GetStateObject(eStateType.STATE_TYPE_STAGE, eUIStageObj.GUNNER.ToString("F")).transform;
 		//OffsetX = transform.position.x - Target.position.x;
 	}
 

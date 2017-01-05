@@ -18,15 +18,43 @@ public class GameManagerMain : MonoBehaviour {
 	Animator s_animator;
 	public UILabel StarLabel, CoinLabel;
 	public bool bonusmode = false;
-	void Start () {
+
+    public UIButton Attack;
+    public UIButton Jump;
+
+    public UISprite W_Color;
+    public UISprite E_Color;
+    public UISprite A_Color;
+    public UISprite P_Color;
+    public UISprite O_Color;
+    public UISprite N_Color;
+    public UISprite F_Color;
+    public UISprite L_Color;
+    public UISprite Y_Color;
+
+    void Start () {
 	
-		s = GameObject.FindObjectOfType<Player>();
+		//s = GameObject.FindObjectOfType<Player>();
 		life = maxlife;
 		InvokeRepeating("MinusHealth", 0, 0.01f);
-		player = GameObject.Find("Gunner");
+		player = StateMgr.Instance.GetStateObject(eStateType.STATE_TYPE_STAGE, eUIStageObj.GUNNER.ToString("F"));
 		s_animator = player.GetComponent<Animator> ();
 
-	}
+        EventDelegate onClickEvent1 = new EventDelegate(player.GetComponent<Player>(), "MoveRight");
+
+        EventDelegate.Parameter param1 = new EventDelegate.Parameter();
+        //param.value = 1;
+        //onClickEvent.parameters[0] = param;
+        EventDelegate.Add(Attack.onClick, onClickEvent1);
+
+        EventDelegate onClickEvent2 = new EventDelegate(player.GetComponent<Player>(), "TouchJump");
+
+        EventDelegate.Parameter param2 = new EventDelegate.Parameter();
+        //param.value = 1;
+        //onClickEvent.parameters[0] = param;
+        EventDelegate.Add(Jump.onClick, onClickEvent2);
+        s = player.GetComponent<Player>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -69,5 +97,14 @@ public class GameManagerMain : MonoBehaviour {
 		yield return new WaitForSeconds (0.12f);
 	}
 
+    public void RestartGame()
+    {
+        player.GetComponent<Player>().Restart();
+    }
+
+    public void NextStageGame()
+    {
+        player.GetComponent<Player>().NextStage();
+    }
 
 }
